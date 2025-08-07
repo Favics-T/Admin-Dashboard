@@ -13,7 +13,7 @@ const SignUp = () => {
 
   ]
   return (
-    <div className='flex h-screen justify-center items-center'>
+    <div className='flex px-4 h-screen justify-center items-center'>
       <div className='flex flex-col gap-8 w-96'>
 <h1 className='Lato text-lg '>Sign Up</h1>
 <form action=""
