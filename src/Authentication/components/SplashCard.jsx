@@ -34,7 +34,7 @@ const SplashCard = () => {
         <div className='flex flex-col gap-4 justify-center w-3/4'>
           {
             faqList.map(({icon, desc,bgColor})=>(
-              <FAQCard icon={icon} desc={desc} bgColor={bgColor} />
+              <FAQCard key={desc} icon={icon} desc={desc} bgColor={bgColor} />
             ))
           }
         </div>

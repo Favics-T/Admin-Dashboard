@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import InputField from './components/InputField'
+import { useForm } from '../Context/UserContext'
+import Button from '../components/Button';
 
 const SignUp = () => {
-  const [userName, setUserName] = useState('');
-  const handleChange =(e)=>{
-        e.target.value()
-  }
+ const {formData,updateForm} = useForm();
   const inputfield =[
     {placeholder:'Name', },
     {placeholder:'E-mail Address'},
@@ -26,6 +25,13 @@ className='flex flex-col gap-4 w-full'>
   }
  
 </form>
+
+<div className='flex flex-col gap-3'>
+  <Button label='Sign up' style='bg-[#6E39CB] text-white '/>
+  <Button label='Sign up with google' style='bg-[#DECCFE] text-[#3A3541]' />
+</div>
+
+<p className='text-center hover:underline cursor-pointer'>I have an account. <span>Sign in</span></p>
       </div>
       
     </div>
