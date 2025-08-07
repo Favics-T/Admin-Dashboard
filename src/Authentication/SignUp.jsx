@@ -6,14 +6,21 @@ import Button from '../components/Button';
 const SignUp = () => {
  const {formData,updateForm} = useForm();
   const inputfield =[
-    {placeholder:'Name', },
-    {placeholder:'E-mail Address'},
-    {placeholder:"Password"},
-    {placeholder:"Company"}
+    {placeholder:'Name',name:'name', type:'text' },
+    {placeholder:'E-mail Address', name:'email',type:"email"},
+    {placeholder:"Password",name:'password',type:"password"},
+    {placeholder:"Company",name:'company',type:"text"}
 
   ]
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    console.log(formData)
+
+  }
+
   return (
-    <div className='flex px-4 h-screen justify-center items-center'>
+    <div className='flex px-4 md:h-screen justify-center items-center'>
       <div className='flex flex-col gap-8 w-96'>
 <h1 className='Lato text-lg '>Sign Up</h1>
 <form action=""

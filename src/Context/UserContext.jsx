@@ -13,14 +13,16 @@ const UserProvider = ({children}) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+//    const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData(prev => ({ ...prev, [name]: value }));
+//   }
+
+
 
   return (
     <UserContext.Provider value={{formData,setFormData,updateForm,
-                                handleChange
+                                
     }}>
         {children}
     </UserContext.Provider>

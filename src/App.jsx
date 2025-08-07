@@ -4,6 +4,7 @@ import AuthLayout from './Authentication/AuthLayout';
 import MainLayout from './components/MainLayout';
 import Login from './Authentication/Login';
 import SignUp from './Authentication/SignUp';
+import Home from './pages/Home';
 
 const App = () => {
   return (
@@ -27,6 +28,13 @@ const App = () => {
             </AuthLayout>
             }
           />
+
+          {/* main layout */}
+          <Route element={<MainLayout />}>
+         <Route  >
+          
+         </Route>
+          </Route>
         </Routes>
       </Router>
     </div>
