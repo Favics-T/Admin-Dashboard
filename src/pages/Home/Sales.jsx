@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sales = () => {
   return (
-    <div className='bg-white h-[200px]'>
+    <div className='bg-white md:w-[] w-[270px] h-[200px]'>
       Sales
     </div>
   )

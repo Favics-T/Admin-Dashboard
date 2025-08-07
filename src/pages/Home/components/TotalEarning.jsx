@@ -2,7 +2,7 @@ import React from 'react'
 
 const TotalEarning = () => {
   return (
-    <div className='bg-white h-[200px]  w-[200px]'>
+    <div className='bg-white h-[200px] w-full   md:w-[200px]'>
       Total Earning
     </div>
   )
