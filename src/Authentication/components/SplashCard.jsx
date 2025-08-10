@@ -6,12 +6,12 @@ import { FaPhoneAlt } from "react-icons/fa";
 const FAQCard = ({icon:Icon, desc,bgColor})=>
 {
 return(
-  <div className='flex md:gap-8 gap-4 items-center'>
+  <div className='flex w-full md:gap-8 gap-2 items-center'>
    <div className={`${bgColor} rounded-full p-1 md:p-3`}>
    <Icon className={`text-white md:text-2xl`}/>
    </div>
    
-    <p1 className='text-white lato text-md w-3/4 text-[14px]'>{desc}</p1>
+    <p1 className='text-white lato text-md md:w-3/4 w-full text-[12px]'>{desc}</p1>
     
   </div>
 )
@@ -27,11 +27,11 @@ const faqList = [
 
 const SplashCard = () => {
   return (
-    <div className='bg-[#6E39CB] py-4 md:h-screen flex flex-col md:justify-center  items-center'>
+    <div className='bg-[#6E39CB] overflow-x-hidden py-4 md:h-screen flex flex-col md:justify-center  items-center'>
       <div className='flex flex-col md:justify-center md:items-center md:px-20 px-8 '>
-       <div className='flex flex-col gap-8 md:justify-center md:items-cente'>
+       <div className='flex flex-col md:gap-8 gap-2 md:justify-center md:items-cente'>
 <h1 className='Lato text-white text-xl'>How it works?</h1>
-        <div className='flex flex-col gap-4 justify-center md:w-3/4'>
+        <div className='flex flex-col gap-4 md:justify-center w-full md:w-3/4'>
           {
             faqList.map(({icon, desc,bgColor})=>(
               <FAQCard key={desc} icon={icon} desc={desc} bgColor={bgColor} />

@@ -27,9 +27,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex px-4 md:h-screen justify-center items-center">
-      <div className="flex flex-col gap-8 w-96">
-        <h1 className="Lato text-lg">Sign Up</h1>
+    <div className="flex px-4 md:py-0.5 py-6 md:h-screen justify-center items-center">
+      <div className="flex md:justify-start justify-center flex-col gap-8 w-96">
+        <h1 className="Lato md:text-start text-center  text-lg">Sign Up</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
           {inputfield.map((field, index) => (
