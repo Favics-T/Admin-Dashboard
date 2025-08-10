@@ -3,6 +3,7 @@ import { SlGraph } from "react-icons/sl";
 import { FaFileAlt } from "react-icons/fa";
 import TransactionGraph from './Chart/TransactionGraph';
 import UserCard from './components/UserCard';
+import DashboardChart from './Chart/DashboardChart';
 
 const ActiveUsers = () => {
   return (
@@ -48,7 +49,7 @@ const ActiveUsers = () => {
           
           {/* Right Chart */}
           <div className="flex-1">
-            <TransactionGraph />
+           <DashboardChart />
           </div>
 
         </div>
