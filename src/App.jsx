@@ -11,32 +11,22 @@ const App = () => {
     <Router>
       <Routes>
         {/* Redirect root to signup */}
-        <Route path='/' element={<Navigate to='/signup' replace />} />
+        <Route path="/" element={<Navigate to="/signup" replace />} />
 
-        {/* Auth Pages with Layout */}
-        <Route
-          path='/login'
-          element={
-            <AuthLayout>
-              <Login />
-            </AuthLayout>
-          }
-        />
-
-        <Route
-          path='/signup'
-          element={
-            <AuthLayout>
-              <SignUp />
-            </AuthLayout>
-          }
-        />
-
-        {/* Main Layout Routes */}
-        <Route element={<MainLayout />}>
-          <Route path='/home' element={<Home />} />
-          
+        {/* Auth Layout Group */}
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Route>
+
+        {/* Main Layout Group */}
+        <Route element={<MainLayout />}>
+          <Route path="/home" element={<Home />} />
+          {/* More main pages can go here */}
+        </Route>
+
+        {/* 404 fallback */}
+        <Route path="*" element={<Navigate to="/signup" replace />} />
       </Routes>
     </Router>
   );
