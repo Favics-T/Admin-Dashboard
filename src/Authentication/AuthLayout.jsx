@@ -1,7 +1,8 @@
 import React from 'react'
 import SplashCard from './components/SplashCard'
+import { Outlet } from 'react-router-dom'
 
-const AuthLayout = ({ children }) => {
+const AuthLayout = () => {
   return (
     <div className='  h-screen md:justify-start justify-center '>
       <div className='flex md:flex-row flex-col h-full'>
@@ -9,7 +10,7 @@ const AuthLayout = ({ children }) => {
 <SplashCard />
        </div>
        <div className='md:w-1/2'>
-        {children}
+        <Outlet />
        </div>
         
         

@@ -19,10 +19,12 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
         </Route>
 
+        
+
         {/* Main Layout Group */}
         <Route element={<MainLayout />}>
           <Route path="/home" element={<Home />} />
-          {/* More main pages can go here */}
+        
         </Route>
 
         {/* 404 fallback */}
