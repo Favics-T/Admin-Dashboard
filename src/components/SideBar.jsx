@@ -29,7 +29,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className='w-full max-w-[250px] gap-8  pt-20 bg-white md:flex fixed hidden flex-col px-6 h-screen'>
+    <div className=' gap-8  pt-20 bg-white md:flex fixed hidden flex-col px-6 h-screen'>
       <div className='flex justify-center mb-6'>
         <img src={Logo} alt="Logo" className='w-[78px] h-[53px]' />
       </div>

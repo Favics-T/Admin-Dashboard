@@ -5,6 +5,7 @@ import MainLayout from './components/MainLayout';
 import Login from './Authentication/Login';
 import SignUp from './Authentication/SignUp';
 import Home from './pages/Home/Home';
+// import Layout from './components/Layout';
 
 const App = () => {
   return (

@@ -1,12 +1,10 @@
 import React from 'react'
 
-const Card = ({children, title}) => {
+const Card = ({children}) => {
   return (
     <div>
-      <div className='flex flex-col gap-8'>
-        <h1 className='lato text-[#3A3541]'>{title}</h1>
-
-        <div>
+      <div className='  w-60 shadow-lg rounded-lg bg-white'>
+                <div className='px-4'>
             {children}
         </div>
       </div>

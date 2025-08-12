@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip } from 'chart.js';
+import Card from '../../../components/Card';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
@@ -20,6 +20,7 @@ const Impression = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Allow full height usage
     plugins: { legend: { display: false } },
     scales: {
       x: { grid: { display: false } },
@@ -28,9 +29,15 @@ const Impression = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-4 w-full">
-      <h2 className="text-sm font-semibold mb-4">Impression</h2>
-      <Bar data={data} options={options} />
+    <div className=" ">
+      <Card>
+        <div className="p-4 h-64"> 
+          <h2 className="text-sm font-semibold mb-4">Impression</h2>
+          <div className="h-full"> 
+            <Bar data={data} options={options} />
+          </div>
+        </div>
+      </Card>
     </div>
   );
 };
