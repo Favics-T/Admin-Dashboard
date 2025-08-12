@@ -11,7 +11,7 @@ const Analytics = () => {
       <div className='flex  flex-col gap-8'>
         <Category />
       
-        <div className='flex gap-8'>
+        <div className='flex md:flex-row flex-col gap-8'>
             {/* sales and watchlist */}
                 <div className="flex flex-col gap-8">
                     <AnalyticsSales />
@@ -19,7 +19,7 @@ const Analytics = () => {
                 </div>
 
                 {/* countries and device category */}
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-8'>
                     <Device />
                     <Countries />
                 </div>
