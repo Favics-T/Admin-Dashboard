@@ -27,7 +27,7 @@ const EarningByItem = () => {
                 <p className="text-sm font-medium">{item.name}</p>
                 <p className="text-xs text-gray-500">{item.type}</p>
               </div>
-            </div>
+            </div> 
             <ChevronRight size={16} className="text-gray-400" />
           </div>
         ))}
