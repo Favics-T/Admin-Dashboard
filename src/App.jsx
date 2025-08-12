@@ -5,16 +5,15 @@ import MainLayout from './components/MainLayout';
 import Login from './Authentication/Login';
 import SignUp from './Authentication/SignUp';
 import Home from './pages/Home/Home';
+import Analytics from './pages/Home/Analytics';
 // import Layout from './components/Layout';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Redirect root to signup */}
+      
         <Route path="/" element={<Navigate to="/signup" replace />} />
-
-        {/* Auth Layout Group */}
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -22,10 +21,10 @@ const App = () => {
 
         
 
-        {/* Main Layout Group */}
+        {/* Main Layout Route */}
         <Route element={<MainLayout />}>
           <Route path="/home" element={<Home />} />
-        
+          <Route path='/analytics' element={<Analytics />} />
         </Route>
 
         {/* 404 fallback */}

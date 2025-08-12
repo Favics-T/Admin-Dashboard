@@ -5,13 +5,14 @@ import { LiaOpencart } from "react-icons/lia";
 import { AiOutlineSafety } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Logo from '../assets/Logo.png';
+import { Link } from 'react-router-dom';
 
 const list = [
   {
     name: "Home",
     icon: <FaHome />,
     children: [
-      { title: 'Dashboard', path: '/dashboard' },
+      { title: 'Dashboard', path: '/home' },
       { title: "Analytics", path: '/analytics' }
     ]
   },
@@ -54,7 +55,10 @@ const SideBar = () => {
               <ul className='ml-8 mt-1 text-sm text-gray-700'>
                 {children.map(({ title, path }) => (
                   <li key={path} className='py-1 cursor-pointer text-[#3A3541] lato text-[16px] hover:text-[#6E39CB]'>
+                   <Link to={path}>
                     {title}
+                   </Link>
+                   
                   </li>
                 ))}
               </ul>

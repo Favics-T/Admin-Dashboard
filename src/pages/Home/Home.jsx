@@ -15,7 +15,7 @@ const Home = () => {
       </div>
 
       {/* right div */}
-      <div className='grid grid-rows-3 gap-8'>
+      <div className='flex flex-col gap-4'>
         <TotalEarning />
         <EarningByItem />
         <Impression />

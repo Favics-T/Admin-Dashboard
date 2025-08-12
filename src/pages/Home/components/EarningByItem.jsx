@@ -14,7 +14,7 @@ const EarningByItem = () => {
     
     <div>
       <Card>
-        <div className="bg-white  rounded-lg  h-96 p-4 ">
+        <div className="bg-white  rounded-lg  h-[321px] p-4 ">
       <h2 className="text-sm font-semibold mb-4">Earnings by item</h2>
       <div className="flex flex-col gap-4">
         {items.map((item, idx) => (
