@@ -15,7 +15,7 @@ const Home = () => {
       </div>
 
       {/* right div */}
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col justify-center items-center gap-4'>
         <TotalEarning />
         <EarningByItem />
         <Impression />

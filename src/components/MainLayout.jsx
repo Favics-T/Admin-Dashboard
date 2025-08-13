@@ -5,7 +5,7 @@ import SideBar from './SideBar';
 
 const MainLayout = () => {
   return (
-    <div className="bg-[#F4F5F9] min-h-screen flex ">
+    <div className="bg-[#F4F5F9] min-h-screen justify-center  flex ">
       
       {/* Sidebar */}
       <aside className="hidden md:block md:w-[18%] sticky top-0 h-screen overflow-y-auto">

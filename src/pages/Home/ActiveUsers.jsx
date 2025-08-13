@@ -7,7 +7,7 @@ import DashboardChart from './Chart/DashboardChart';
 
 const ActiveUsers = () => {
   return (
-    <div className="bg-white w-[270px] md:w-[762px] p-4 rounded-lg shadow">
+    <div className="bg-white w-[290px] flex justify-center items-center md:w-[762px] p-4 rounded-lg shadow">
       <div className="flex  flex-col gap-4">
         
         {/* Subtitle */}

@@ -11,7 +11,7 @@ const Analytics = () => {
       <div className='flex  flex-col gap-8'>
         <Category />
       
-        <div className='flex md:flex-row flex-col gap-8'>
+        <div className='flex md:flex-row md:w-full w-[290px] flex-col gap-8'>
             {/* sales and watchlist */}
                 <div className="flex flex-col gap-8">
                     <AnalyticsSales />

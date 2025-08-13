@@ -8,12 +8,13 @@ const cat =[
 
 const CatCard = ({title, perc,price,order})=>{
     return(
-    <div className='px-8 border-r border-dashed border-[#898] '>
+    <div className='md:px-8 flex flex-col md:gap-6 gap-2 px-4 md:w-full w-[250px]
+     shadow-emerald-50 md:shadow-white shadow-md md:border-r border-dashed border-[#898] '>
         <div className='flex gap-4  items-center lato '>
-           <h1 className='text-[#3A3541]  font-medium text-[16px]'>{title} </h1> 
+           <h1 className='text-[#3A3541]  md:font-medium text-sm md:text-[16px]'>{title} </h1> 
            <p className='text-[#6E39CB] text-[12.64px]'>{perc}</p>
         </div>
-        <h1 className='text-[#6E39CB] font-bold text-[28.93px]'>{price}</h1>
+        <h1 className='text-[#6E39CB] font-bold text-[20px] md:text-[28.93px]'>{price}</h1>
         <p className='text-[#89868D] text-[14.22px]'>{order}</p>
     </div>
 
