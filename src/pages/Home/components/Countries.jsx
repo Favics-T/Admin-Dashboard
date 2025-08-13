@@ -15,14 +15,14 @@ const CountryCard = ({ country, code, perc }) => {
         <Flag code={code} style={{ width: 24, height: 16, borderRadius: '2px' }} />
         <p>{country}</p>
       </div>
-      <p className='font-semibold'>{perc}</p>
+      <p className=''>{perc}</p>
     </div>
   );
 };
 
 const Countries = () => {
   return (
-    <div className='bg-white text-[#3A3541] text-[16px] lato rounded-lg flex items-center py-8 justify-center w-[250px] h-[340px] shadow-md'>
+    <div className='bg-white text-[#3A3541] text-[16px] text-[] lato rounded-lg flex items-center py-8 justify-center w-[290px] md:w-[250px] h-[340px] shadow-md'>
       <div className='flex flex-col gap-8 w-full px-4'>
         <h1 className='font-medium text-[20px]'>Top Countries</h1>
         <div className='flex flex-col gap-10'>
