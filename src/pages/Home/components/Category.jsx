@@ -9,8 +9,8 @@ const cat =[
 const CatCard = ({title, perc,price,order})=>{
     return(
     <div className='md:px-8 flex flex-col md:gap-6 gap-2 px-4 md:w-full w-[250px]
-     shadow-emerald-50 md:shadow-white shadow-md md:border-r border-dashed border-[#898] '>
-        <div className='flex gap-4  items-center lato '>
+     shadow-emerald-50 md:shadow-white shadow-md md:border-r-2 border-dashed border-[#898] '>
+        <div className='flex gap-4 justify-between  items-center lato '>
            <h1 className='text-[#3A3541]  md:font-medium text-sm md:text-[16px]'>{title} </h1> 
            <p className='text-[#6E39CB] text-[12.64px]'>{perc}</p>
         </div>
@@ -23,7 +23,7 @@ const CatCard = ({title, perc,price,order})=>{
 
 const Category = () => {
   return (
-    <div className='bg-white rounded-lg shadow-xl  flex md:flex-row flex-col items-center justify-center gap-4 py-12'>
+    <div className='bg-white rounded-lg md:px-8 md:w-full w-[300px] shadow-xl  flex md:flex-row flex-col items-center justify-center gap-4 py-12'>
       {
         cat.map(({title,perc, price,day})=>(
             <CatCard title = {title} perc={perc} price={price} order={day} />
