@@ -16,7 +16,18 @@ const list = [
       { title: "Analytics", path: '/analytics' }
     ]
   },
-  { name: "Pages", icon: <FaFileAlt />, children: [{title:'', path:""}] },
+  { name: "Pages",
+     icon: <FaFileAlt />, 
+     children: [
+      {title:'Profile', path:""},
+      {title:"Users"},
+      {title:'Account', path:""},
+      {title:"Projects"},
+      {title:'Pricing Page', path:""},
+      {title:"Charts"},
+      {title:'Notification', path:""},
+      {title:"Chat"},
+    ] },
   { name: "Application", icon: <FaFolderOpen />, children: [{title:'', path:""}] },
   { name: "E-Commerce", icon: <LiaOpencart />, children: [{title:'', path:""}] },
   { name: "Authentication", icon: <AiOutlineSafety />, children: [{title:'', path:""}] }
@@ -52,9 +63,9 @@ const SideBar = () => {
             </div>
 
             {activeIndex === index && children.length > 0 && (
-              <ul className='ml-8 mt-1 text-sm text-gray-700'>
+              <ul className='ml-8 mt-1 gap-2 flex flex-col text-sm text-gray-700'>
                 {children.map(({ title, path }) => (
-                  <li key={path} className='py-1 cursor-pointer text-[#3A3541] lato text-[16px] hover:text-[#6E39CB]'>
+                  <li key={path} className='py-1 cursor-pointer text-[#3A3541] lato text-[14px] hover:text-[#6E39CB]'>
                    <Link to={path}>
                     {title}
                    </Link>
