@@ -1,15 +1,15 @@
-import React, { createContext, useMemo } from "react";
-import {
-  FaHome,
-  FaFileAlt,
-  FaChevronUp
-} from "react-icons/fa";
-import { FaFolderOpen } from "react-icons/fa6";
+import React, { createContext, useMemo, useState, useCallback } from "react";
+import { FaHome, FaFileAlt, FaChevronUp } from "react-icons/fa";
 import { LiaOpencart } from "react-icons/lia";
 import { AiOutlineSafety } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
-export const SideBarContext = createContext();
+export const SideBarContext = createContext({
+  menuWithIds: [],
+  isSidebarOpen: false,
+  toggleSidebar: () => {},
+  closeSidebar: () => {},
+});
 
 const sidebarList = [
   {
@@ -17,8 +17,8 @@ const sidebarList = [
     icon: FaHome,
     children: [
       { title: "Dashboard", path: "/home" },
-      { title: "Analytics", path: "/analytics" }
-    ]
+      { title: "Analytics", path: "/analytics" },
+    ],
   },
   {
     title: "Pages",
@@ -29,15 +29,15 @@ const sidebarList = [
         children: [
           { title: "Profile Overview", path: "/profileoverview" },
           { title: "Teams", path: "/teams" },
-          { title: "All Projects", path: "/allprojects" }
-        ]
+          { title: "All Projects", path: "/allprojects" },
+        ],
       },
       {
         title: "Users",
         children: [
           { title: "Reports", path: "/reports" },
-          { title: "New User", path: "/newuser" }
-        ]
+          { title: "New User", path: "/newuser" },
+        ],
       },
       {
         title: "Account",
@@ -45,22 +45,22 @@ const sidebarList = [
           { title: "Setting", path: "/setting" },
           { title: "Billing", path: "/billing" },
           { title: "Invoice", path: "/invoice" },
-          { title: "Security", path: "/security" }
-        ]
+          { title: "Security", path: "/security" },
+        ],
       },
       {
         title: "Projects",
         children: [
           { title: "General", path: "/general" },
           { title: "Timeline", path: "/timeline" },
-          { title: "New Project", path: "/newproject" }
-        ]
+          { title: "New Project", path: "/newproject" },
+        ],
       },
       { title: "Pricing page", path: "/pricingpage" },
       { title: "Charts", path: "/charts" },
       { title: "Notification", path: "/notification" },
-      { title: "Chat", path: "/chat" }
-    ]
+      { title: "Chat", path: "/chat" },
+    ],
   },
   {
     title: "Applications",
@@ -69,8 +69,8 @@ const sidebarList = [
       { title: "Kanban", path: "/kanban" },
       { title: "Wizard", path: "/path" },
       { title: "Data Tables", path: "/datatables" },
-      { title: "Calendar", path: "/calendar" }
-    ]
+      { title: "Calendar", path: "/calendar" },
+    ],
   },
   {
     title: "E-commerce",
@@ -83,35 +83,41 @@ const sidebarList = [
             title: "Products",
             children: [
               { title: "New Product", path: "/newproduct" },
-              { title: "Edit Product", path: "/editproduct" }
-            ]
-          }
-        ]
+              { title: "Edit Product", path: "/editproduct" },
+            ],
+          },
+        ],
       },
       {
         title: "Orders",
         children: [
           { title: "Order list", path: "/orderlist" },
-          { title: "Order Detail", path: "/orderdetail" }
-        ]
-      }
-    ]
+          { title: "Order Detail", path: "/orderdetail" },
+        ],
+      },
+    ],
   },
-  { title: "Authentication", icon: AiOutlineSafety }
+  { title: "Authentication", icon: AiOutlineSafety },
 ];
 
 const generateMenuWithIds = (menu) =>
   menu.map((item) => ({
     ...item,
     id: uuidv4(),
-    children: item.children ? generateMenuWithIds(item.children) : undefined
+    children: item.children ? generateMenuWithIds(item.children) : undefined,
   }));
 
 const SideBarProvider = ({ children }) => {
   const menuWithIds = useMemo(() => generateMenuWithIds(sidebarList), []);
 
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const toggleSidebar = useCallback(() => setSidebarOpen((p) => !p), []);
+  const closeSidebar = useCallback(() => setSidebarOpen(false), []);
+
   return (
-    <SideBarContext.Provider value={{ menuWithIds }}>
+    <SideBarContext.Provider
+      value={{ menuWithIds, isSidebarOpen, toggleSidebar, closeSidebar }}
+    >
       {children}
     </SideBarContext.Provider>
   );
