@@ -7,7 +7,7 @@ import Impression from './components/Impression'
 
 const Home = () => {
   return (
-    <div className='flex md:flex-row flex-col gap-2  md:gap-10  '>
+    <div className='flex md:w-full w-[290px] md:flex-row flex-col gap-2  md:gap-10  '>
       {/* sales and active users */}
       <div className='flex flex-col gap-8'>
  <ActiveUsers />
