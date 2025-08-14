@@ -8,7 +8,7 @@ const SideBar = () => {
   const { menuWithIds, isSidebarOpen, closeSidebar } = useContext(SideBarContext);
   const [activeId, setActiveId] = useState(null);
 
-  if (!menuWithIds) return null; // guard
+  if (!menuWithIds) return null;
 
   const handleToggle = (id) => {
     setActiveId((prevId) => (prevId === id ? null : id));
@@ -25,7 +25,11 @@ const SideBar = () => {
             <div className="flex items-center gap-3">
               {Icon && <Icon className="text-xl text-[#6E39CB]" />}
               {path ? (
-                <Link to={path} className="text-sm text-[#3A3541]" onClick={closeSidebar}>
+                <Link
+                  to={path}
+                  className="text-sm text-[#3A3541]"
+                  onClick={closeSidebar}
+                >
                   {title}
                 </Link>
               ) : (
@@ -52,15 +56,15 @@ const SideBar = () => {
 
   return (
     <>
-      {/* Desktop */}
-      <aside className="bg-white md:flex hidden flex-col p-6 h-screen w-64 shadow-lg">
+      {/* Desktop Sidebar */}
+      <aside className="bg-white hidden md:flex flex-col p-6 h-screen w-64 shadow-lg">
         <div className="flex justify-center mb-6">
           <img src={Logo} alt="Logo" className="w-[78px] h-[53px]" />
         </div>
         {renderMenu(menuWithIds)}
       </aside>
 
-      {/* Mobile overlay */}
+      {/* Mobile Overlay */}
       <div
         className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
           isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -68,7 +72,7 @@ const SideBar = () => {
         onClick={closeSidebar}
       />
 
-      {/* Mobile sidebar */}
+      {/* Mobile Sidebar */}
       <aside
         className={`fixed top-0 left-0 w-64 bg-white shadow-xl z-50 h-full p-6 transform transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LuMenu, LuX } from "react-icons/lu";
 import { SideBarContext } from "../Context/SideBarContext";
+import SideBar from './SideBar';
 
 const routeTitleMap = {
   '/home': 'Dashboard',
@@ -22,12 +23,12 @@ const NavBar = () => {
   return (
     <nav className="flex items-center justify-between md:justify-start gap-4 md:gap-10 w-full relative">
       
-      {/* Left: Page Title */}
+      
       <h1 className="text-[#6E39CB] font-lato text-lg md:text-2xl whitespace-nowrap">
         {title}
       </h1>
 
-      {/* Middle: Search */}
+      
       <div className="hidden md:block flex-1 max-w-md">
         <input
           type="text"
@@ -36,7 +37,7 @@ const NavBar = () => {
         />
       </div>
 
-      {/* Right: Mobile Menu Button */}
+      
       <button
         className="md:hidden text-2xl text-[#6E39CB]"
         aria-label="Toggle menu"
@@ -45,12 +46,12 @@ const NavBar = () => {
         <LuMenu />
       </button>
 
-      {/* Mobile Menu Drawer */}
+      
       {view && (
         <div className="fixed inset-0 bg-black/50 z-50 flex">
           <div className="bg-white w-64 p-4 flex flex-col gap-4 h-full overflow-y-auto">
             
-            {/* Close Button */}
+            
             <button
               className="self-end text-2xl text-[#6E39CB]"
               aria-label="Close menu"
@@ -59,14 +60,14 @@ const NavBar = () => {
               <LuX />
             </button>
 
-            {/* Search on mobile */}
+            
             <input
               type="text"
               placeholder="Search..."
               className="bg-gray-100 border border-gray-300 rounded-full w-full px-4 py-2 text-sm text-gray-500 focus:outline-none focus:border-[#6E39CB]"
             />
 
-            {/* Menu Items */}
+            
             <nav className="flex flex-col gap-2">
               {menuWithIds.map((item) => (
                 <button
@@ -80,6 +81,7 @@ const NavBar = () => {
             </nav>
           </div>
         </div>
+        // <SideBar />
       )}
     </nav>
   );
