@@ -1,83 +1,58 @@
-import React, { useState } from 'react';
-import { FaHome, FaFileAlt, FaChevronUp } from "react-icons/fa";
-import { FaFolderOpen } from "react-icons/fa6";
-import { LiaOpencart } from "react-icons/lia";
-import { AiOutlineSafety } from "react-icons/ai";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import Logo from '../assets/Logo.png';
-import { Link } from 'react-router-dom';
-
-const list = [
-  {
-    name: "Home",
-    icon: <FaHome />,
-    children: [
-      { title: 'Dashboard', path: '/home' },
-      { title: "Analytics", path: '/analytics' }
-    ]
-  },
-  { name: "Pages",
-     icon: <FaFileAlt />, 
-     children: [
-      {title:'Profile', path:""},
-      {title:"Users"},
-      {title:'Account', path:""},
-      {title:"Projects"},
-      {title:'Pricing Page', path:""},
-      {title:"Charts"},
-      {title:'Notification', path:""},
-      {title:"Chat"},
-    ] },
-  { name: "Application", icon: <FaFolderOpen />, children: [{title:'', path:""}] },
-  { name: "E-Commerce", icon: <LiaOpencart />, children: [{title:'', path:""}] },
-  { name: "Authentication", icon: <AiOutlineSafety />, children: [{title:'', path:""}] }
-];
+import React, { useContext, useState } from "react";
+import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
+import Logo from "../assets/Logo.png";
+import { Link } from "react-router-dom";
+import { SideBarContext } from "../Context/SideBarContext";
 
 const SideBar = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const { menuWithIds } = useContext(SideBarContext);
+  const [activeId, setActiveId] = useState(null);
 
-  const handleToggle = (index) => {
-    setActiveIndex(prevIndex => prevIndex === index ? null : index);
+  const handleToggle = (id) => {
+    setActiveId((prevId) => (prevId === id ? null : id));
   };
 
-  return (
-    <div className=' gap-8  pt-20 bg-white md:flex fixed hidden flex-col px-6 h-screen'>
-      <div className='flex justify-center mb-6'>
-        <img src={Logo} alt="Logo" className='w-[78px] h-[53px]' />
-      </div>
-
-      <ul className='flex flex-col gap-2 w-full'>
-        {list.map(({ name, icon, children }, index) => (
-          <li key={name} className='flex flex-col'>
-            <div
-              onClick={() => handleToggle(index)}
-              className='flex items-center justify-between cursor-pointer hover:bg-[#DECCFE] w-full rounded-lg px-2 py-2 text-[#6E39CB]'
-            >
-              <div className='flex text-xl items-center gap-3'>
-                {icon}
-                <span className='text-lg'>{name}</span>
-              </div>
-              {children.length > 0 && (
-                activeIndex === index ? <FaChevronUp /> : <RiArrowDropDownLine className='text-3xl' />
+  const renderMenu = (menu) => (
+    <ul className="flex flex-col gap-2">
+      {menu.map(({ id, title, icon: Icon, children, path }) => (
+        <li key={id} className="flex flex-col">
+          <div
+            onClick={() => children && handleToggle(id)}
+            className="flex items-center justify-between cursor-pointer hover:bg-[#DECCFE] rounded-lg px-2 py-2"
+          >
+            <div className="flex items-center gap-3">
+              {Icon && <Icon className="text-xl" />}
+              {path ? (
+                <Link to={path} className="text-sm">
+                  {title}
+                </Link>
+              ) : (
+                <span className="text-sm">{title}</span>
               )}
             </div>
-
-            {activeIndex === index && children.length > 0 && (
-              <ul className='ml-8 mt-1 gap-2 flex flex-col text-sm text-gray-700'>
-                {children.map(({ title, path }) => (
-                  <li key={path} className='py-1 cursor-pointer text-[#3A3541] lato text-[14px] hover:text-[#6E39CB]'>
-                   <Link to={path}>
-                    {title}
-                   </Link>
-                   
-                  </li>
-                ))}
-              </ul>
+            {children && (
+              activeId === id ? (
+                <RiArrowDropUpLine className="text-xl" />
+              ) : (
+                <RiArrowDropDownLine className="text-xl" />
+              )
             )}
-          </li>
-        ))}
-      </ul>
-    </div>
+          </div>
+          {children && activeId === id && (
+            <div className="ml-4">{renderMenu(children)}</div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+
+  return (
+    <aside className="bg-white md:flex hidden flex-col p-6 h-screen">
+      <div className="flex justify-center mb-6">
+        <img src={Logo} alt="Logo" className="w-[78px] h-[53px]" />
+      </div>
+      {renderMenu(menuWithIds)}
+    </aside>
   );
 };
 
