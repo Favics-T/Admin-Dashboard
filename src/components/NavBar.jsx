@@ -11,6 +11,7 @@ const routeTitleMap = {
   '/analytics': 'Analytics',
   '/Authentication': 'Authentication',
   '/E-commerce': 'E-Commerce',
+  '/pages/profileoverview':'Profile/Profile Overview'
 };
 
 const NavBar = () => {
