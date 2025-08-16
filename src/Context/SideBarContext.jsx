@@ -14,15 +14,24 @@ const generateMenuWithIds = (menu) =>
   }));
 
 const SideBarProvider = ({ children }) => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [activeIds, setActiveIds] = useState({});
+
+  // function for sidebar toggling of children
+const sidebarToggle = (id)=>{
+  setActiveIds((prevId)=>({
+    ...prevId, 
+    [id]:!prevId[id] // toggles only aative id
+  }))
+}
   const menuWithIds = useMemo(() => generateMenuWithIds(sidebarList), []);
 
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = useCallback(() => setSidebarOpen((p) => !p), []);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
 
   return (
     <SideBarContext.Provider
-      value={{ menuWithIds, isSidebarOpen, toggleSidebar, closeSidebar }}
+      value={{ menuWithIds, isSidebarOpen, toggleSidebar, closeSidebar, sidebarToggle,activeIds }}
     >
       {children}
     </SideBarContext.Provider>

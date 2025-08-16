@@ -7,8 +7,14 @@ export const sidebarList = [
     title: "Home",
     icon: FaHome,
     children: [
-      { title: "Dashboard", path: "/home" },
-      { title: "Analytics", path: "/analytics" },
+      { 
+        title: "Dashboard",
+         path: "/home" 
+      },
+      { 
+        title: "Analytics", 
+        path: "/home/analytics"
+       },
     ],
   },
   {
@@ -18,9 +24,9 @@ export const sidebarList = [
       {
         title: "Profile",
         children: [
-          { title: "Profile Overview", path: "/profileoverview" },
-          { title: "Teams", path: "/teams" },
-          { title: "All Projects", path: "/allprojects" },
+          { title: "Profile Overview", path: "/pages/profileoverview" },
+          { title: "Teams", path: "/pages/teams" },
+          { title: "All Projects", path: "/pages/allprojects" },
         ],
       },
       {

@@ -27,10 +27,10 @@ const App = () => {
         {/* Main Layout Route */}
         <Route element={<MainLayout />}>
           <Route path="/home" element={<Home />} />
-          <Route path='/analytics' element={<Analytics />} />
-          <Route path='/profileoverview' element={<ProfileOverview />} />
-          <Route path='/teams' element={<Teams />}/>
-          <Route path='/allprojects' element={<AllProjects />}/>
+          <Route path='/home/analytics' element={<Analytics />} />
+          <Route path='/pages/profileoverview' element={<ProfileOverview />} />
+          <Route path='/pages/teams' element={<Teams />}/>
+          <Route path='/pages/allprojects' element={<AllProjects />}/>
           <Route />
         </Route>
 
