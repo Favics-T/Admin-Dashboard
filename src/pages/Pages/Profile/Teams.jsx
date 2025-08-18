@@ -27,7 +27,7 @@ const Teams = () => {
   ];
 
   return (
-    <div className="bg-white py-12 text-[#3A3541] w-full px-6 h-screen rounded-lg">
+    <div className="bg-white py-12 text-[#3A3541] w-full px-6  rounded-lg">
       {/* Team management */}
       <div className="border-b text-[#b8b5bd] pb-4">
         <h1 className="text-[#3A3541] text-2xl">Team management</h1>
@@ -35,7 +35,7 @@ const Teams = () => {
       </div>
 
       {/* Invite team */}
-      <div className="flex gap-6 text-[#b8b5bd] py-6">
+      <div className="flex gap-6 border-b text-[#b8b5bd] py-6">
         <div className="flex-[3] flex flex-col gap-1">
           <h1 className="Lato text-[22px] text-[#3A3541]">Invite team members</h1>
           <p>
@@ -43,10 +43,14 @@ const Teams = () => {
           </p>
         </div>
 
-        <div className="flex-[7] border rounded-md p-4">
+        <div className="flex-[7] flex flex-col gap-4 p-4">
+          
+          <div className="flex flex-col gap-8">
+<AddTeam />
           <AddTeam />
           <AddTeam />
-          <AddTeam />
+            </div>
+            
           <div className="flex justify-between items-center mt-4">
             <button className="text-sm text-[#7367F0] hover:underline">
               + Add another
@@ -59,7 +63,7 @@ const Teams = () => {
       </div>
 
       {/* Team members */}
-      <div className="pt-6">
+      <div className="pt-6 border-b py-8 text-gray-400">
         <h1 className="Lato text-[22px] text-[#3A3541] mb-4">Team members</h1>
         <div className="flex flex-col gap-3">
           {members.map((m, i) => (
