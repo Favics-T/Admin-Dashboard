@@ -11,7 +11,7 @@ const FAQCard = ({ icon: Icon, desc, bgColor }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.6 }}
-    className="flex w-full gap-3 items-center bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl"
+    className="flex w-full gap-3 items-center bg-white/10 backdrop-blur-md border border-white/20 px-3 md:py-3 py-8 rounded-xl"
   >
     <div className={`${bgColor} rounded-full p-2`}>
       <Icon className="text-white text-xl" />
@@ -50,14 +50,14 @@ const SplashCard = ({ onGetStarted }) => {
   }, [isMobile]);
 
   return (
-    <div className="bg-gradient-to-b from-[#b396e6] to-[#4B1D99] h-screen flex flex-col md:gap-0 gap-2 justify-center items-center px-8 md:px-20 text-center md:text-left">
+    <div className="  bg-[#4B1D99] h-screen flex flex-col md:gap-0 gap-2 justify-center items-center px-8 md:px-20 text-center md:text-left">
       {/* Title */}
       <h1 className="Lato text-white text-2xl md:text-4xl font-bold mb-6">
         How it works?
       </h1>
 
       {/* FAQ Section */}
-      <div className="w-full md:w-3/4">
+      <div className="w-full  md:w-3/4">
         {isMobile ? (
           <AnimatePresence mode="wait">
             <FAQCard
