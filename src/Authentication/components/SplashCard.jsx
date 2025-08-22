@@ -49,7 +49,7 @@ const SplashCard = ({ onGetStarted }) => {
     <div className="bg-gradient-to-tr from-[#6E39CB] to-[#4B1D99] overflow-x-hidden py-4 h-screen flex flex-col justify-center items-center relative">
       <div className="flex flex-col md:justify-center md:items-center md:px-20 px-8 w-full">
         {/* Mobile-only Logo */}
-        <div className="flex justify-center mb-6 md:hidden">
+        <div className="flex justify-center mb-20 md:hidden">
           <img src={Logo} alt="Logo" className="w-32 h-auto" />
         </div>
 
