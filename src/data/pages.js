@@ -24,16 +24,25 @@ export const sidebarList = [
       {
         title: "Profile",
         children: [
-          { title: "Profile Overview", path: "/pages/profileoverview" },
-          { title: "Teams", path: "/pages/teams" },
-          { title: "All Projects", path: "/pages/allprojects" },
+          { 
+            title: "Profile Overview",
+             path: "/pages/profileoverview"
+           },
+          { 
+            title: "Teams",
+             path: "/pages/teams" 
+          },
+          { 
+            title: "All Projects", 
+            path: "/pages/allprojects"
+           },
         ],
       },
       {
         title: "Users",
         children: [
-          { title: "Reports", path: "/reports" },
-          { title: "New User", path: "/newuser" },
+          { title: "Reports", path: "/users/report" },
+          { title: "New User", path: "users/newuser" },
         ],
       },
       {

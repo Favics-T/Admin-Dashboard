@@ -1,3 +1,4 @@
+// SignUp.jsx
 import React from "react";
 import InputField from "./components/InputField";
 import { useForm } from "../Context/UserContext";
@@ -28,11 +29,19 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex px-4 md:py-0.5 py-6 md:h-screen justify-center items-center">
-      <div className="flex flex-col gap-8 w-96">
-        <h1 className="Lato text-lg md:text-start text-center">Sign Up</h1>
+    <div className="flex px-4 md:px-40 py-6 w-full md:py-0 md:h-screen justify-center items-center">
+      <div className="flex flex-col gap-6 w-full max-w-2xl bg-white md:shadow-none shadow-md p-6 md:p-0 rounded-lg">
+        
+        {/* Title */}
+        <h1 className="Lato text-2xl font-semibold text-center md:text-left">
+          Sign Up
+        </h1>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+        {/* Form */}
+        <form 
+          onSubmit={handleSubmit} 
+          className="flex flex-col gap-4 w-full"
+        >
           {inputFields.map((field) => (
             <InputField
               key={field.name}
@@ -45,20 +54,24 @@ const SignUp = () => {
           <Button
             label="Sign up"
             type="submit"
-            style="bg-[#6E39CB] text-white"
+            style="bg-[#6E39CB] text-white w-full"
           />
         </form>
 
+        {/* Google signup */}
         <Button
           label="Sign up with Google"
-          style="bg-[#DECCFE] text-[#3A3541]"
+          style="bg-[#DECCFE] text-[#3A3541] w-full"
           onClick={() => alert("Google sign-up coming soon...")}
         />
-        <Link to="/login">
-          <p className="text-center hover:underline cursor-pointer">
-            I have an account. <span>Sign in</span>
-          </p>
-        </Link>
+
+        {/* Login link */}
+        <p className="text-center text-sm">
+          I have an account.{" "}
+          <Link to="/login" className="text-[#6E39CB] hover:underline">
+            Sign in
+          </Link>
+        </p>
       </div>
     </div>
   );

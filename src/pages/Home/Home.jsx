@@ -7,20 +7,21 @@ import Impression from './components/Impression'
 
 const Home = () => {
   return (
-    <div className='flex md:w-full w-[290px] md:flex-row flex-col gap-2  md:gap-10  '>
-      {/* sales and active users */}
-      <div className='flex flex-col gap-8'>
- <ActiveUsers />
-      <Sales />
-      </div>
+    <div className="md:w-full w-[290px] px-4 md:px-8">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-10 w-full">
+        {/* Left Column */}
+        <div className="flex flex-col gap-6 flex-1">
+          <ActiveUsers />
+          <Sales />
+        </div>
 
-      {/* right div */}
-      <div className='flex flex-col justify-center items-center gap-4'>
-        <TotalEarning />
-        <EarningByItem />
-        <Impression />
+        {/* Right Column */}
+        <div className="flex flex-col gap-6 flex-1">
+          <TotalEarning />
+          <EarningByItem />
+          <Impression />
+        </div>
       </div>
-     
     </div>
   )
 }

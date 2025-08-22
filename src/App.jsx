@@ -9,7 +9,10 @@ import Analytics from './pages/Home/Analytics';
 import ProfileOverview from './pages/Pages/Profile/ProfileOverview';
 import Teams from './pages/Pages/Profile/Teams';
 import AllProjects from './pages/Pages/Profile/AllProjects';
+import Report from './pages/Pages/Users/Report';
+import NewUser from './pages/Pages/Users/NewUser';
 // import Layout from './components/Layout';
+import SplashCard from './Authentication/components/SplashCard'
 
 const App = () => {
   return (
@@ -17,6 +20,7 @@ const App = () => {
       <Routes>
       
         <Route path="/" element={<Navigate to="/signup" replace />} />
+        <Route path='/welcome' element={<SplashCard />} />
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -31,6 +35,8 @@ const App = () => {
           <Route path='/pages/profileoverview' element={<ProfileOverview />} />
           <Route path='/pages/teams' element={<Teams />}/>
           <Route path='/pages/allprojects' element={<AllProjects />}/>
+          <Route path='/users/report' element={<Report />}/>
+          <Route path='users/newuser' element={<NewUser />}/>
           <Route />
         </Route>
 
