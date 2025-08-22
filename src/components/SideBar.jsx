@@ -58,7 +58,7 @@ const SideBar = () => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="bg-white hidden md:flex flex-col p-6 h-screen w-64 shadow-lg overflow-y-auto">
+      <aside className="bg-white hidden md:flex flex-col p-6 h-screen  shadow-lg overflow-y-auto">
         <div className="flex justify-center mb-6">
           <img src={Logo} alt="Logo" className="w-[78px] h-[53px]" />
         </div>

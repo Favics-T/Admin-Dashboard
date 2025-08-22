@@ -4,10 +4,12 @@ import { FaFileAlt } from "react-icons/fa";
 import TransactionGraph from './Chart/TransactionGraph';
 import UserCard from './components/UserCard';
 import DashboardChart from './Chart/DashboardChart';
+import CardC from '../../components/CardC';
+import GraphText from '../../components/GraphText';
 
 const ActiveUsers = () => {
   return (
-    <div className="bg-white w-full max-w-[900px] mx-auto p-4 sm:p-6 rounded-lg shadow">
+    <div className="bg-white w-full max-w-[1200px] mx-auto p-4 sm:p-6 rounded-lg shadow">
       <div className="flex flex-col gap-6">
 
         {/* Subtitle */}
@@ -47,8 +49,11 @@ const ActiveUsers = () => {
           </div>
           
           {/* Right Chart */}
-          <div className="flex-1 min-w-0 h-64 sm:h-80 md:h-96">
-            <DashboardChart />
+          <div className="flex-1 border rounded-2xl shadow-xl text-gray-200 w-full h-64 sm:h-80 py-12 md:h-96">
+           <div className='flex  items-center justify-center h-full '>
+          <CardC customClassName=''><GraphText />  </CardC>
+            {/* <CardC customClassName='h-60 md:w-1/2'><GraphText />  </CardC> */}
+          </div>
           </div>
         </div>
 
@@ -60,4 +65,3 @@ const ActiveUsers = () => {
 };
 
 export default ActiveUsers;
-

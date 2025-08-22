@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image1 from './asset/Image1.png'
 const projects = [
   {
     id: 1,
@@ -71,12 +71,12 @@ const AllProjects = () => {
   return (
     <div className="bg-white pb-18 min-h-screen p-6 rounded-lg shadow-sm">
       {/* Top bar */}
-      <div className="flex justify-between items-center pb-6 ">
+      <div className="flex flex-col md:gap-1 gap-6 md:flex-row justify-between items-center pb-6 ">
         <div className="flex items-center gap-3">
           <img
-            src=""
+            src={Image1}
             alt="profile"
-            className="w-10 h-10 rounded-full"
+            className="md:w-10 w-18 md:h-10 rounded-full"
           />
           <div>
             <h2 className="font-semibold text-[#3A3541]">Sape Morch</h2>
