@@ -48,10 +48,10 @@ export const sidebarList = [
       {
         title: "Account",
         children: [
-          { title: "Setting", path: "/setting" },
-          { title: "Billing", path: "/billing" },
-          { title: "Invoice", path: "/invoice" },
-          { title: "Security", path: "/security" },
+          { title: "Setting", path: "/pages/account/setting" },
+          { title: "Billing", path: "/pages/account/billing" },
+          { title: "Invoice", path: "/pages/account/invoice" },
+          { title: "Security", path: "/pages/account/security" },
         ],
       },
       {
@@ -63,9 +63,9 @@ export const sidebarList = [
         ],
       },
       { title: "Pricing page", path: "/pricingpage" },
-      { title: "Charts", path: "/charts" },
-      { title: "Notification", path: "/notification" },
-      { title: "Chat", path: "/chat" },
+      { title: "Charts", path: "/pages/charts" },
+      { title: "Notification", path: "/pages/notification" },
+      { title: "Chat", path: "/pages/chat" },
     ],
   },
   {

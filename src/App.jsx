@@ -13,6 +13,13 @@ import Report from './pages/Pages/Users/Report';
 import NewUser from './pages/Pages/Users/NewUser';
 // import Layout from './components/Layout';
 import SplashCard from './Authentication/components/SplashCard'
+import Setting from './pages/Pages/Account/Setting';
+import Billing from './pages/Pages/Account/Billing';
+import Invoice from './pages/Pages/Account/Invoice';
+import Security from './pages/Pages/Account/Security';
+import Chart from './pages/Pages/Chart';
+import Notification from './pages/Pages/Notification';
+import Chat from './pages/Pages/Chat';
 
 const App = () => {
   return (
@@ -37,6 +44,13 @@ const App = () => {
           <Route path='/pages/allprojects' element={<AllProjects />}/>
           <Route path='/users/report' element={<Report />}/>
           <Route path='users/newuser' element={<NewUser />}/>
+          <Route path='/pages/account/setting' element={<Setting />}/>
+          <Route path='/pages/account/billing' element={<Billing />} />
+          <Route path='/pages/account/invoice' element={<Invoice />} />
+          <Route path='/pages/account/security' element={<Security />}  />
+          <Route path='/pages/charts' element={<Chart />} />
+          <Route path='/pages/notification' element={<Notification />} />
+          <Route path='/pages/chat' element={<Chat />} />
           <Route />
         </Route>
 
