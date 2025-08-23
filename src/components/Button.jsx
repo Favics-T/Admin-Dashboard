@@ -5,7 +5,7 @@ const Button = ({label,style,onClick}) => {
     <div>
       <button
       onClick={onClick}
-      className={`${style} w-full rounded-md lato text-[16px] font-medium p-2 cursor-pointer `}
+      className={`${style} w-full rounded-md lato bg-[#6E39CB] text-white text-[16px] font-medium p-2 cursor-pointer `}
       >{label}</button>
     </div>
   )

@@ -17,4 +17,22 @@ font-family: "Lato", sans-serif;
 .purple{
      color: #6E39CB;
 }
+.darkAsh{
+     color: #3A3541;
+}
+.brightAsh{
+     color: #89868D;
+}
 
+.subHeader{
+     color: #3A3541;
+     font-size: 25px;
+     font-family: "Lato", sans-serif;
+ font-weight: 700;
+}
+.mini{
+     color: #89868D;
+     font-size: 14px;
+     font-family: "Lato", sans-serif;
+ /* font-weight: 700; */
+}

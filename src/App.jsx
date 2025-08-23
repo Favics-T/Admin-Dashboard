@@ -51,6 +51,7 @@ const App = () => {
           <Route path='/pages/charts' element={<Chart />} />
           <Route path='/pages/notification' element={<Notification />} />
           <Route path='/pages/chat' element={<Chat />} />
+          {/* <Route path='/account/billing' element={<Billing />} /> */}
           <Route />
         </Route>
 
