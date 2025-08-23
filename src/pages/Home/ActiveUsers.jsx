@@ -6,8 +6,14 @@ import UserCard from './components/UserCard';
 import DashboardChart from './Chart/DashboardChart';
 import CardC from '../../components/CardC';
 import GraphText from '../../components/GraphText';
+import Payout from './Chart/Payout';
 
 const ActiveUsers = () => {
+
+   const likesData = [
+    { value: 100 }, { value: 300 }, { value: 150 }, { value: 300 }, { value: 200 }
+  ];
+  
   return (
     <div className="bg-white w-full max-w-[1200px] mx-auto p-4 sm:p-6 rounded-lg shadow">
       <div className="flex flex-col gap-6">
@@ -38,10 +44,7 @@ const ActiveUsers = () => {
             
             {/* Upgrade Notice */}
             <div className="border-t border-[#DBDCDE] flex flex-col gap-2 items-center md:items-start pt-2 text-center md:text-left">
-              <SlGraph 
-                className="text-[#6E39CB] text-3xl sm:text-4xl mt-1"
-                style={{ transform: 'scaleX(2)' }}
-              />
+                           <Payout chartData={likesData}  color="#8B5CF6"  />
               <p className="text-xs sm:text-sm text-[#3A3541] font-lato">
                 Upgrade your payout method in settings
               </p>
@@ -49,7 +52,7 @@ const ActiveUsers = () => {
           </div>
           
           {/* Right Chart */}
-          <div className="flex-1 border rounded-2xl shadow-xl text-gray-200 w-full h-64 sm:h-80 py-12 md:h-96">
+          <div className="flex-1 border rounded-2xl shadow-lg text-gray-200 w-full h-64 sm:h-80 py-12 md:h-56">
            <div className='flex  items-center justify-center h-full '>
           <CardC customClassName=''><GraphText />  </CardC>
             {/* <CardC customClassName='h-60 md:w-1/2'><GraphText />  </CardC> */}

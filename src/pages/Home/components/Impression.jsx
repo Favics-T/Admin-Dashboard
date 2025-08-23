@@ -31,7 +31,7 @@ const Impression = () => {
   return (
     <div className=" ">
       <Card>
-        <div className="p-4 h-[287px]"> 
+        <div className="p-4 "> 
           <h2 className="text-sm font-semibold mb-4">Impression</h2>
           <div className="h-full"> 
             <Bar data={data} options={options} />

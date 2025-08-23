@@ -41,7 +41,7 @@ const cardList = [
 
 const Card = ({ icon: Icon, title, iconBg, count, progressBg, iconColor }) => {
   return (
-    <div className='shadow flex flex-col gap-3 p-4 rounded-lg'>
+    <div className='shadow-lg flex flex-col gap-5 p-4 rounded-lg'>
       {/* title */}
       <div className='flex gap-4 items-center'>
         {/* icon */}
@@ -51,7 +51,7 @@ const Card = ({ icon: Icon, title, iconBg, count, progressBg, iconColor }) => {
         <h1 className='font-semibold'>{title}</h1>
       </div>
 
-      <h1 className='text-lg font-bold'>{count}</h1>
+      <h1 className='text-3xl font-bold'>{count}</h1>
 
       {/* progress */}
       <div className='h-1 w-full bg-gray-200 rounded'>
