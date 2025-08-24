@@ -1,14 +1,11 @@
 import React from 'react'
 
-const Card = ({children}) => {
+const Card = ({children,style}) => {
   return (
-    <div>
-      <div className='  md:w-60   shadow-xl rounded-lg bg-white'>
-                <div className='px-4'>
-            {children}
-        </div>
-      </div>
-    </div>
+         <div className={`shadow-xl rounded-2xl bg-white ${style}`}>
+                            {children}
+              </div>
+    
   )
 }
 

@@ -5,9 +5,9 @@ import Card from '../../../components/Card';
 const TotalEarning = () => {
   return (
     
-    <div>
-      <Card>
-         <div className='bg-white py-8 lato px-12 flex flex-col gap-6 justify-center items-center  rounded-lg '>
+    
+      
+         <div className='bg-white rounded-xl py-8 lato px-12 flex flex-col gap-6 justify-center items-center   '>
       <div className='flex flex-col gap-8 justify-center items-center text-center'>
          <h1 className="font-medium lato text-[#3a3541] text-[20.25px]">Your Earnings this month</h1>
          <div className='flex flex-col gap-8'>
@@ -17,8 +17,8 @@ const TotalEarning = () => {
        </div>
        <Button label='Withdraw all earnings' style={`shadow text-[#6E39CB] text-[16px] `} />
      </div>
-      </Card>
-    </div>
+      
+    
   );
 };
 

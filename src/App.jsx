@@ -23,6 +23,7 @@ import Chat from './pages/Pages/Chat';
 import General from './pages/Pages/Projects/General';
 import Timeline from './pages/Pages/Projects/Timeline';
 import NewProject from './pages/Pages/Projects/NewProject';
+import Dashboard from './pages/Home/Dashboard';
 
 const App = () => {
   return (
@@ -40,7 +41,7 @@ const App = () => {
 
         {/* Main Layout Route */}
         <Route element={<MainLayout />}>
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Dashboard />} />
           <Route path='/home/analytics' element={<Analytics />} />
           <Route path='/pages/profileoverview' element={<ProfileOverview />} />
           <Route path='/pages/teams' element={<Teams />}/>

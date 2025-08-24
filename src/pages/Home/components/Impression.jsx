@@ -2,6 +2,7 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip } from 'chart.js';
 import Card from '../../../components/Card';
+import { div } from 'framer-motion/client';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
@@ -29,16 +30,19 @@ const Impression = () => {
   };
 
   return (
-    <div className=" ">
-      <Card>
-        <div className="p-4 "> 
-          <h2 className="text-sm font-semibold mb-4">Impression</h2>
-          <div className="h-full"> 
-            <Bar data={data} options={options} />
-          </div>
-        </div>
-      </Card>
-    </div>
+    
+      // <Card>
+      //   <div className="p-4 "> 
+      //     <h2 className="text-sm font-semibold mb-4">Impression</h2>
+      //     <div className="h-full"> 
+      //       <Bar data={data} options={options} />
+      //     </div>
+      //   </div>
+      // </Card>
+      <div className='bg-white h-40 rounded-xl items-center flex justify-center text-xl font-bold'>
+        Chart Coming soon
+      </div>
+    
   );
 };
 
