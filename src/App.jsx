@@ -19,7 +19,7 @@ import Invoice from './pages/Pages/Account/Invoice';
 import Security from './pages/Pages/Account/Security';
 import Chart from './pages/Pages/Chart';
 import Notification from './pages/Pages/Notification';
-import Chat from './pages/Pages/Chat';
+import Chat from './pages/Pages/Chat/Chat';
 import General from './pages/Pages/Projects/General';
 import Timeline from './pages/Pages/Projects/Timeline';
 import NewProject from './pages/Pages/Projects/NewProject';
