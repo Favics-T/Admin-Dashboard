@@ -57,9 +57,9 @@ export const sidebarList = [
       {
         title: "Projects",
         children: [
-          { title: "General", path: "/general" },
-          { title: "Timeline", path: "/timeline" },
-          { title: "New Project", path: "/newproject" },
+          { title: "General", path: "/pages/projects/general" },
+          { title: "Timeline", path: "/pages/projects/timeline" },
+          { title: "New Project", path: "/pages/projects/newproject" },
         ],
       },
       { title: "Pricing page", path: "/pricingpage" },

@@ -20,6 +20,9 @@ import Security from './pages/Pages/Account/Security';
 import Chart from './pages/Pages/Chart';
 import Notification from './pages/Pages/Notification';
 import Chat from './pages/Pages/Chat';
+import General from './pages/Pages/Projects/General';
+import Timeline from './pages/Pages/Projects/Timeline';
+import NewProject from './pages/Pages/Projects/NewProject';
 
 const App = () => {
   return (
@@ -51,7 +54,9 @@ const App = () => {
           <Route path='/pages/charts' element={<Chart />} />
           <Route path='/pages/notification' element={<Notification />} />
           <Route path='/pages/chat' element={<Chat />} />
-          {/* <Route path='/account/billing' element={<Billing />} /> */}
+          <Route path='/pages/projects/general' element={<General />} />
+          <Route path='/pages/projects/timeline' element={<Timeline />} />
+          <Route path='/pages/projects/newproject' element={<NewProject />} />
           <Route />
         </Route>
 
