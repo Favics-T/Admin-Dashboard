@@ -1,25 +1,18 @@
 import React, { useState } from "react";
-import Image1 from './asset/Image2.png'
-import Image2 from './asset/Image3.png'
-import Image3 from './asset/Image4.png'
-import Image4 from './asset/Image5.png'
-import Image5 from './asset/Image6.png'
-// import Image2 from './asset/Image3.png'
-
 
 const InviteMember = ({ email, role, onChangeEmail, onChangeRole }) => (
-  <div className="flex gap-2 items-center mb-3">
+  <div className="flex flex-col sm:flex-row gap-2 items-center mb-3">
     <input
       type="email"
       value={email}
       onChange={(e) => onChangeEmail(e.target.value)}
       placeholder="isomi@isom.com"
-      className="flex-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-[#7367F0]"
+      className="flex-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-[#7367F0] w-full"
     />
     <select
       value={role}
       onChange={(e) => onChangeRole(e.target.value)}
-      className="border rounded-md px-3 py-2 text-sm"
+      className="border rounded-md px-3 py-2 text-sm w-full sm:w-auto"
     >
       <option>Read-only</option>
       <option>Editor</option>
@@ -28,21 +21,23 @@ const InviteMember = ({ email, role, onChangeEmail, onChangeRole }) => (
   </div>
 );
 
-
 const TeamMember = ({ member, onDelete, onEdit }) => (
-  <div className="flex justify-between items-center border rounded-md px-4 py-3">
+  <div className="flex flex-col sm:flex-row justify-between sm:items-center border rounded-md px-4 py-3 gap-2">
+    {/* Name */}
     <div className="flex items-center gap-3">
       <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center font-semibold text-white">
         {member.name.charAt(0)}
       </div>
       <span className="text-[#3A3541]">{member.name}</span>
     </div>
-    <div className="flex gap-4 text-sm">
+
+    {/* Role & Actions */}
+    <div className="flex flex-wrap gap-3 text-sm">
       <span className="text-[#3A3541]">{member.role}</span>
-      <button className="" onClick={onDelete}>
+      <button className="text-red-500 hover:underline" onClick={onDelete}>
         Delete
       </button>
-      <button className="text-[#7367F0]" onClick={onEdit}>
+      <button className="text-[#7367F0] hover:underline" onClick={onEdit}>
         Edit
       </button>
     </div>
@@ -70,7 +65,8 @@ const Teams = () => {
     setInvites(newInvites);
   };
 
-  const addInvite = () => setInvites([...invites, { email: "", role: "Read-only" }]);
+  const addInvite = () =>
+    setInvites([...invites, { email: "", role: "Read-only" }]);
 
   const sendInvites = () => {
     console.log("Invites sent:", invites);
@@ -85,20 +81,29 @@ const Teams = () => {
   };
 
   return (
-    <div className="bg-white py-12 text-[#3A3541] w-full px-6 rounded-lg">
+    <div className="bg-white py-8 sm:py-12 text-[#3A3541] w-full px-4 sm:px-6 lg:px-12 rounded-lg">
       {/* Team Management Header */}
       <div className="border-b text-[#b8b5bd] pb-4">
-        <h1 className="text-2xl font-semibold text-[#3A3541]">Team management</h1>
-        <p>Manage your team members and their account permission here</p>
+        <h1 className="text-xl sm:text-2xl font-semibold text-[#3A3541]">
+          Team management
+        </h1>
+        <p className="text-sm sm:text-base">
+          Manage your team members and their account permission here
+        </p>
       </div>
 
       {/* Invite Team */}
       <div className="flex flex-col lg:flex-row gap-6 border-b text-[#b8b5bd] py-6">
         <div className="flex-1 flex flex-col gap-1">
-          <h2 className="text-[22px] font-semibold text-[#3A3541]">Invite team members</h2>
-          <p>Get your projects up and running faster by inviting your team to collaborate.</p>
+          <h2 className="text-lg sm:text-[22px] font-semibold text-[#3A3541]">
+            Invite team members
+          </h2>
+          <p className="text-sm sm:text-base">
+            Get your projects up and running faster by inviting your team to
+            collaborate.
+          </p>
         </div>
-        <div className="flex-1 flex flex-col gap-4 p-4">
+        <div className="flex-1 flex flex-col gap-4 p-2 sm:p-4">
           <div className="flex flex-col gap-4">
             {invites.map((invite, idx) => (
               <InviteMember
@@ -110,12 +115,15 @@ const Teams = () => {
               />
             ))}
           </div>
-          <div className="flex justify-between items-center mt-4">
-            <button className="text-sm text-[#7367F0] hover:underline" onClick={addInvite}>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-4">
+            <button
+              className="text-sm text-[#7367F0] hover:underline"
+              onClick={addInvite}
+            >
               + Add another
             </button>
             <button
-              className="bg-[#7367F0] text-white px-4 py-2 rounded-md"
+              className="bg-[#7367F0] text-white px-4 py-2 rounded-md w-full sm:w-auto"
               onClick={sendInvites}
             >
               Send Invites
@@ -126,7 +134,9 @@ const Teams = () => {
 
       {/* Team Members */}
       <div className="pt-6 border-b py-8 text-gray-400">
-        <h2 className="text-[22px] font-semibold text-[#3A3541] mb-4">Team members</h2>
+        <h2 className="text-lg sm:text-[22px] font-semibold text-[#3A3541] mb-4">
+          Team members
+        </h2>
         <div className="flex flex-col gap-3">
           {members.map((member, idx) => (
             <TeamMember
