@@ -1,12 +1,73 @@
-# React + Vite
+Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An Admin Dashboard for Talent Management that helps recruiters and HR teams manage their hiring process with ease.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Authentication Pages (Login, Register)
 
-## Expanding the ESLint configuration
+Responsive Dashboard with metric cards
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ Sidebar Navigation with toggle support
+
+ Talent Pool Management: bring your own or get matched
+
+ Search & Filtering for talents
+
+ Direct Contact with talents (no cold calls or emails needed)
+
+ FAQ (What This Dashboard Does)
+
+## Join Us : 
+ Sign up and start managing your recruitment.
+
+## Search Talents :
+  Use your pool or let the system recommend the best ones.
+
+ ## Easy Contact :
+ Reach talents directly with a few clicks.
+
+ Tech Stack
+
+React – UI Library
+
+Tailwind CSS – Styling
+
+React Icons – Icons
+
+Framer Motion  – Animations
+
+ Installation
+
+Clone the repo:
+
+git clone https://github.com/Favics-T/Admin-Dashboard.git
+cd Admin-Dashboard
+
+
+Install dependencies:
+
+npm install
+
+
+Run the development server:
+
+npm run dev
+
+
+Build for production:
+
+npm run build
+
+ Roadmap
+
+ Implement talent profile pages
+
+ Add advanced filtering & sorting
+
+ Integrate backend API for real data
+
+ Add role-based authentication
+
+
+
