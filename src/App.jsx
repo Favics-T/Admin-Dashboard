@@ -24,6 +24,7 @@ import General from './pages/Pages/Projects/General';
 import Timeline from './pages/Pages/Projects/Timeline';
 import NewProject from './pages/Pages/Projects/NewProject';
 import Dashboard from './pages/Home/Dashboard';
+import PricingPage from './pages/Pages/PricingPage';
 
 const App = () => {
   return (
@@ -58,6 +59,7 @@ const App = () => {
           <Route path='/pages/projects/general' element={<General />} />
           <Route path='/pages/projects/timeline' element={<Timeline />} />
           <Route path='/pages/projects/newproject' element={<NewProject />} />
+          <Route path='/pages/pricingpage' element={<PricingPage />} />
           <Route />
         </Route>
 

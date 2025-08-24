@@ -62,7 +62,7 @@ export const sidebarList = [
           { title: "New Project", path: "/pages/projects/newproject" },
         ],
       },
-      { title: "Pricing page", path: "/pricingpage" },
+      { title: "Pricing page", path: "/pages/pricingpage" },
       { title: "Charts", path: "/pages/charts" },
       { title: "Notification", path: "/pages/notification" },
       { title: "Chat", path: "/pages/chat" },
