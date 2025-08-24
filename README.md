@@ -1,4 +1,4 @@
-Admin Dashboard
+## Admin Dashboard
 
 An Admin Dashboard for Talent Management that helps recruiters and HR teams manage their hiring process with ease.
 
@@ -18,16 +18,16 @@ Responsive Dashboard with metric cards
 
  FAQ (What This Dashboard Does)
 
-## Join Us : 
+# Join Us : 
  Sign up and start managing your recruitment.
 
-## Search Talents :
+# Search Talents :
   Use your pool or let the system recommend the best ones.
 
- ## Easy Contact :
+ # Easy Contact :
  Reach talents directly with a few clicks.
 
- Tech Stack
+## Tech Stack
 
 React – UI Library
 
@@ -37,29 +37,30 @@ React Icons – Icons
 
 Framer Motion  – Animations
 
- Installation
+# Installation
 
-Clone the repo:
+# Clone the repo:
 
 git clone https://github.com/Favics-T/Admin-Dashboard.git
+
 cd Admin-Dashboard
 
 
-Install dependencies:
+# Install dependencies:
 
 npm install
 
 
-Run the development server:
+# Run the development server:
 
 npm run dev
 
 
-Build for production:
+# Build for production:
 
 npm run build
 
- Roadmap
+## Roadmap
 
  Implement talent profile pages
 
