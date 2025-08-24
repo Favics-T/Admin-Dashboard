@@ -2,51 +2,49 @@ import React from 'react'
 import CardC from '../../../components/CardC'
 import GraphText from '../../../components/GraphText'
 
-const report =[
-  {price:"$8,098.32", title:"Payment"},
-    {price:"$901,256.01", title:"Loan income"},
-      {price:"$987,256.98", title:"Gross amount"},
-        {price:"$564,164.57", title:"Jobs create"},
+const report = [
+  { price: "$8,098.32", title: "Payment" },
+  { price: "$901,256.01", title: "Loan income" },
+  { price: "$987,256.98", title: "Gross amount" },
+  { price: "$564,164.57", title: "Jobs create" },
 ]
 
-const ReportPrice=({price, title})=>{
-  return(
-    <div className='flex flex-col md:shadow-none w-full shadow-md md:p-1 p-8 md:border-r text-gray-300'>
-      <h1 className='text-[#3A3541] font-bold text-[28.83px]'>{price}</h1>
-      <p className=' text-center text-lg font md:text-[12px]'>{title}</p>
-
+const ReportPrice = ({ price, title }) => {
+  return (
+    <div className='flex flex-col w-full shadow-md md:shadow-none md:p-1 p-6 border-gray-200 md:border-r text-gray-700'>
+      <h1 className='text-[#3A3541] font-bold text-2xl md:text-xl'>{price}</h1>
+      <p className='text-center text-base md:text-sm'>{title}</p>
     </div>
   )
 }
+
 const Report = () => {
   return (
-    <div className='w-full flex flex-col gap-8 L
-    lato '>
+    <div className='w-full flex flex-col gap-8 lato'>
       <div className='flex flex-col gap-8'>
-        <div className='grid md:grid-cols-4 rounded-lg shadow gap-8  bg-white md:items-start items-center md:justify-start justify-center p-10 md:p-[76px]'>
-          {
-            report.map(({price,title})=>(
-              <ReportPrice price={price} title={title} />
-            ))
-          }
-        </div>
-        <div >
-             <CardC customClassName='w-full h-44'>
-                <GraphText />
-            </CardC>
+        {/* Stats section */}
+        <div className='grid grid-cols-1 md:grid-cols-4 rounded-lg shadow bg-white p-6 md:p-12 gap-6'>
+          {report.map(({ price, title }, index) => (
+            <ReportPrice key={index} price={price} title={title} />
+          ))}
         </div>
 
-        {/* payment an loan graph */}
-        <div className='flex w-full h-44 gap-8'>
-            <CardC customClassName='w-1/2 '>
-                <GraphText />
-            </CardC>
-
-            <CardC customClassName='w-1/2'>
-                <GraphText />
-            </CardC>
+        {/* Overview graph */}
+        <div>
+          <CardC customClassName='w-full h-44'>
+            <GraphText />
+          </CardC>
         </div>
 
+        {/* Payment & Loan graph */}
+        <div className='flex flex-col md:flex-row w-full gap-6'>
+          <CardC customClassName='w-full md:w-1/2 h-44'>
+            <GraphText />
+          </CardC>
+          <CardC customClassName='w-full md:w-1/2 h-44'>
+            <GraphText />
+          </CardC>
+        </div>
       </div>
     </div>
   )
