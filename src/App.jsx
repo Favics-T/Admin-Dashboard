@@ -11,7 +11,7 @@ import Teams from './pages/Pages/Profile/Teams';
 import AllProjects from './pages/Pages/Profile/AllProjects';
 import Report from './pages/Pages/Users/Report';
 import NewUser from './pages/Pages/Users/NewUser';
-// import Layout from './components/Layout';
+import KanbanDashboard from './pages/Application/Kanban/Kanban';
 import SplashCard from './Authentication/components/SplashCard'
 import Setting from './pages/Pages/Account/Setting';
 import Billing from './pages/Pages/Account/Billing';
@@ -60,6 +60,7 @@ const App = () => {
           <Route path='/pages/projects/timeline' element={<Timeline />} />
           <Route path='/pages/projects/newproject' element={<NewProject />} />
           <Route path='/pages/pricingpage' element={<PricingPage />} />
+          <Route path='/application/kanban' element={<KanbanDashboard />} />
           <Route />
         </Route>
 

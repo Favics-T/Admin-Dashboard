@@ -29,15 +29,18 @@ const Login = () => {
   };
 
   return (
-    <div className="flex px-4 md:h-screen justify-center items-center">
-      <div className="flex flex-col gap-8 w-96">
+    <div className="flex justify-center items-center w-full px-4 md:px-40 py-6 md:h-screen bg-gray-50">
+      <div className="flex flex-col gap-8 w-full max-w-md bg-white p-6 md:p-10 rounded-lg shadow-md">
+        
+        {/* Title */}
         <div>
-          <h1 className="Lato text-lg">Welcome back</h1>
-          <p className="text-sm text-[#89868D] lato">
+          <h1 className="Lato text-2xl md:text-3xl font-semibold">Welcome back</h1>
+          <p className="text-sm text-[#89868D] mt-2">
             Welcome back! Please enter your details.
           </p>
         </div>
 
+        {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
           {inputFields.map((field) => (
             <InputField
@@ -51,20 +54,24 @@ const Login = () => {
           <Button
             label="Sign in"
             type="submit"
-            style="bg-[#0039BA] text-white"
+            style="bg-[#0039BA] text-white w-full"
           />
         </form>
 
+        {/* Google login */}
         <Button
           label="Sign in with Google"
-          style="bg-[#DECCFE] text-[#3A3541]"
+          style="bg-[#DECCFE] text-[#3A3541] w-full"
           onClick={() => alert("Google login coming soon...")}
         />
-        <Link to="/signup">
-          <p className="text-center hover:underline cursor-pointer">
-            I don’t have an account. <span>Sign up</span>
-          </p>
-        </Link>
+
+        {/* Signup link */}
+        <p className="text-center text-sm">
+          I don’t have an account.{" "}
+          <Link to="/signup" className="text-[#6E39CB] hover:underline">
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   );
