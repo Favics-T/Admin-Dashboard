@@ -1,4 +1,4 @@
-import Avatar from "../Avatar";
+import Avatar from "./Avatar";
 
 const ListItem = ({ person, active, onClick }) => (
   <button
