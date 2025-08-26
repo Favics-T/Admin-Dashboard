@@ -51,11 +51,11 @@ const App = () => {
         <Route element={<MainLayout />}>
           <Route path="/home" element={<Dashboard />} />
           <Route path='/home/analytics' element={<Analytics />} />
-          <Route path='/pages/profileoverview' element={<ProfileOverview />} />
-          <Route path='/pages/teams' element={<Teams />}/>
-          <Route path='/pages/allprojects' element={<AllProjects />}/>
-          <Route path='/users/report' element={<Report />}/>
-          <Route path='users/newuser' element={<NewUser />}/>
+          <Route path='/pages/profile/profileoverview' element={<ProfileOverview />} />
+          <Route path='/pages/profile/teams' element={<Teams />}/>
+          <Route path='/pages/profile/allprojects' element={<AllProjects />}/>
+          <Route path='/pages/users/report' element={<Report />}/>
+          <Route path='/pages/users/newuser' element={<NewUser />}/>
           <Route path='/pages/account/setting' element={<Setting />}/>
           <Route path='/pages/account/billing' element={<Billing />} />
           <Route path='/pages/account/invoice' element={<Invoice />} />

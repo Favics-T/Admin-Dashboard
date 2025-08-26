@@ -26,23 +26,23 @@ export const sidebarList = [
         children: [
           { 
             title: "Profile Overview",
-             path: "/pages/profileoverview"
+             path: "/pages/profile/profileoverview"
            },
           { 
             title: "Teams",
-             path: "/pages/teams" 
+             path: "/pages/profile/teams" 
           },
           { 
             title: "All Projects", 
-            path: "/pages/allprojects"
+            path: "/pages/profile/allprojects"
            },
         ],
       },
       {
         title: "Users",
         children: [
-          { title: "Reports", path: "/users/report" },
-          { title: "New User", path: "users/newuser" },
+          { title: "Reports", path: "/pages/users/report" },
+          { title: "New User", path: "/pages/users/newuser" },
         ],
       },
       {
@@ -72,10 +72,10 @@ export const sidebarList = [
     title: "Applications",
     icon: FaChevronUp,
     children: [
-      { title: "Kanban", path: "application/kanban" },
-      { title: "Wizard", path: "application/wizard" },
-      { title: "Data Tables", path: "application/datatables" },
-      { title: "Calendar", path: "application/calendar" },
+      { title: "Kanban", path: "/application/kanban" },
+      { title: "Wizard", path: "/application/wizard" },
+      { title: "Data Tables", path: "/application/datatables" },
+      { title: "Calendar", path: "/application/calendar" },
     ],
   },
   {

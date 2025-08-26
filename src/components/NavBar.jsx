@@ -5,14 +5,38 @@ import { SideBarContext } from "../Context/SideBarContext";
 
 const routeTitleMap = {
   '/home': 'Dashboard',
+  '/home/analytics': 'Analytics',
   '/dashboard': 'Dashboard',
-  '/notifications': 'Notifications',
-  '/analytics': 'Analytics',
-  '/Authentication': 'Authentication',
-  '/E-commerce': 'E-Commerce',
-  '/pages/profileoverview': 'Profile/Profile Overview',
-  '/users/newuser': 'User/New User',
-  '/users/report': "User/Report"
+  '/pages/profile/teams': 'Profile/Team',
+  '/pages/profile/profileoverview': 'Profile/Profile Overview',
+   '/pages/profile/allprojects': 'Profile/All Projects',
+    '/pages/users/newuser': 'User/New User',
+  '/pages/users/report': "User/Report",
+  '/pages/account/setting':"Account/Setting",
+  '/pages/account/billing':"Account/Billing",
+   '/pages/account/invoice':"Account/Invoice",
+    '/pages/account/security':"Account/Security",
+    "/pages/projects/general":"Projects/General",
+     "/pages/projects/timeline":"Projects/Timeline",
+      "/pages/projects/newproject":"Projects/New Project",
+      "/pages/pricingpage":"Pricing Page",
+      "/pages/charts":"Charts",
+      "/pages/notification":"Notifications",
+      "/pages/pricingpage":"Pricing Page",
+       "/pages/chats":"Chats",
+        "/application/kanban":"Kanban",
+    "/application/wizard":"Wizard",
+    "/application/datatables":"Data Tables",
+    "/application/calendar":"Calendar",
+ 
+  '/e-commerce/overview/orders/orderdetail': 'Order Details',
+  '/e-commerce/overview/orders/orderlist':"Order List",
+  
+  
+  "/e-commerce/overview/products/newproduct":"New Product",
+  "/e-commerce/overview/products/editproduct":'Edit Product'
+
+
 };
 
 const NavBar = () => {
