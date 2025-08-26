@@ -25,6 +25,9 @@ import Timeline from './pages/Pages/Projects/Timeline';
 import NewProject from './pages/Pages/Projects/NewProject';
 import Dashboard from './pages/Home/Dashboard';
 import PricingPage from './pages/Pages/PricingPage';
+import Wizard from './pages/Application/Wizard/Wizard';
+import DataTables from './pages/Application/DataTables/DataTables';
+import { Calendar } from 'lucide-react';
 
 const App = () => {
   return (
@@ -61,6 +64,9 @@ const App = () => {
           <Route path='/pages/projects/newproject' element={<NewProject />} />
           <Route path='/pages/pricingpage' element={<PricingPage />} />
           <Route path='/application/kanban' element={<KanbanDashboard />} />
+          <Route path='/application/wizard' element={<Wizard />} />
+         <Route path='/application/datatables' element={<DataTables />} />
+         <Route path='/application/calendar' element={<Calendar />} />
           <Route />
         </Route>
 

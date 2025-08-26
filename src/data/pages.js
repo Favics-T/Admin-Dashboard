@@ -73,9 +73,9 @@ export const sidebarList = [
     icon: FaChevronUp,
     children: [
       { title: "Kanban", path: "application/kanban" },
-      { title: "Wizard", path: "/path" },
-      { title: "Data Tables", path: "/datatables" },
-      { title: "Calendar", path: "/calendar" },
+      { title: "Wizard", path: "application/wizard" },
+      { title: "Data Tables", path: "application/datatables" },
+      { title: "Calendar", path: "application/calendar" },
     ],
   },
   {
