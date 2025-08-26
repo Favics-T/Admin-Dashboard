@@ -1,4 +1,3 @@
-// DashboardChart.jsx
 import React from 'react'; 
 import { Bar } from 'react-chartjs-2';
 import { barChart } from './data/data';
@@ -24,7 +23,7 @@ ChartJs.register(
 const DashboardChart = () => {
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // ✅ lets it stretch naturally
+    maintainAspectRatio: false, //  lets it stretch naturally
     plugins: {
       legend: { display: true, position: 'top' },
       tooltip: { enabled: true }
@@ -39,7 +38,7 @@ const DashboardChart = () => {
     <div className="bg-gradient-to-r from-[#C2A1FD] to-[#9154FD] 
       w-full min-h-[250px] sm:min-h-[300px] md:min-h-[400px] 
       p-4 rounded-lg shadow">
-      {/* ✅ Now chart fills height dynamically */}
+      {/* chart fills height dynamically */}
       <Bar options={options} data={barChart} />
     </div>
   );

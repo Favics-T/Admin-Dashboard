@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import { SideBarContext } from "../Context/SideBarContext";
 
 const SideBar = () => {
-  const { menuWithIds, isSidebarOpen, closeSidebar, activeIds, sidebarToggle } =
-    useContext(SideBarContext);
+  const { menuWithIds, isSidebarOpen, closeSidebar, activeIds, sidebarToggle } = useContext(SideBarContext);
 
-  if (!menuWithIds) return null;
+  if (!menuWithIds) return null; // sidebar won't render if no sidebarlist
 
   const renderMenu = (menu) => (
     <ul className="flex flex-col gap-2 overflow-x-hidden">

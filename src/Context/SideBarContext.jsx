@@ -1,5 +1,4 @@
 import React, { createContext, useMemo, useState, useCallback } from "react";
-
 import { v4 as uuidv4 } from "uuid";
 import { sidebarList } from "../data/pages";
 
@@ -21,10 +20,12 @@ const SideBarProvider = ({ children }) => {
 const sidebarToggle = (id)=>{
   setActiveIds((prevId)=>({
     ...prevId, 
-    [id]:!prevId[id] // toggles only aative id
+ // toggles only aative id
+       [id]:!prevId[id]
   }))
 }
-  const menuWithIds = useMemo(() => generateMenuWithIds(sidebarList), []);
+  const menuWithIds = 
+  useMemo(() => generateMenuWithIds(sidebarList), []);
 
   const toggleSidebar = useCallback(() => setSidebarOpen((p) => !p), []);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);

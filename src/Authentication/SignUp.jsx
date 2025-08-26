@@ -1,4 +1,3 @@
-// SignUp.jsx
 import React from "react";
 import InputField from "./components/InputField";
 import { useForm } from "../Context/UserContext";
