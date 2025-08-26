@@ -1,6 +1,7 @@
 import { FaHome, FaFileAlt, FaChevronUp } from "react-icons/fa";
 import { LiaOpencart } from "react-icons/lia";
 import { AiOutlineSafety } from "react-icons/ai";
+import { path } from "framer-motion/client";
 
 export const sidebarList = [
   {
@@ -103,5 +104,10 @@ export const sidebarList = [
       },
     ],
   },
-  { title: "Authentication", icon: AiOutlineSafety },
+  { title: "Authentication",
+     icon: AiOutlineSafety,
+    children:[
+      {title:"Login", path:'/login'},
+      {title:"Sign Up", path:"/signup"}
+    ] },
 ];
