@@ -28,6 +28,10 @@ import PricingPage from './pages/Pages/PricingPage';
 import Wizard from './pages/Application/Wizard/Wizard';
 import DataTables from './pages/Application/DataTables/DataTables';
 import { Calendar } from 'lucide-react';
+import NewProducts from './pages/ECommerce/Overview/Products/NewProducts';
+import EditProducts from './pages/ECommerce/Overview/Products/EditProducts';
+import OrderList from './pages/ECommerce/Orders/OrderList';
+import OrderDetail from './pages/ECommerce/Orders/OrderDetail';
 
 const App = () => {
   return (
@@ -67,6 +71,10 @@ const App = () => {
           <Route path='/application/wizard' element={<Wizard />} />
          <Route path='/application/datatables' element={<DataTables />} />
          <Route path='/application/calendar' element={<Calendar />} />
+         <Route path='e-commerce/overview/products/newproduct' element={<NewProducts />} />
+         <Route path='e-commerce/overview/products/editproduct' element={<EditProducts />}/>
+         <Route path='/e-commerce/overview/orders/orderlist' element={<OrderList />}/>
+         <Route path='/e-commerce/overview/orders/orderdetail' element={<OrderDetail />}/>
           <Route />
         </Route>
 

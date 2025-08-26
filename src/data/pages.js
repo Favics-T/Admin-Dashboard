@@ -88,8 +88,8 @@ export const sidebarList = [
           {
             title: "Products",
             children: [
-              { title: "New Product", path: "/newproduct" },
-              { title: "Edit Product", path: "/editproduct" },
+              { title: "New Product", path: "e-commerce/overview/products/newproduct" },
+              { title: "Edit Product", path: "e-commerce/overview/products/editproduct" },
             ],
           },
         ],
@@ -97,8 +97,8 @@ export const sidebarList = [
       {
         title: "Orders",
         children: [
-          { title: "Order list", path: "/orderlist" },
-          { title: "Order Detail", path: "/orderdetail" },
+          { title: "Order list", path: "/e-commerce/overview/orders/orderlist" },
+          { title: "Order Detail", path: "/e-commerce/overview/orders/orderdetail" },
         ],
       },
     ],
