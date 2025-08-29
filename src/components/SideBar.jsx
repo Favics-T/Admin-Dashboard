@@ -18,7 +18,7 @@ const SideBar = () => {
             onClick={() => children && sidebarToggle(id)}
             className="flex items-center justify-between cursor-pointer hover:bg-[#F4F4F7] rounded-lg px-3 py-2"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex  items-center gap-3">
               {Icon && <Icon className="text-xl text-[#6E39CB]" />}
               {path ? (
                 <Link
