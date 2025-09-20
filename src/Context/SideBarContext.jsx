@@ -36,7 +36,6 @@ const sidebarToggle = (id)=>{
     >
       {children}
     </SideBarContext.Provider>
-  );
-};
+  );};
 
 export default SideBarProvider;
