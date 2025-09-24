@@ -104,7 +104,7 @@ const Kanban = () => {
         </div>
 
         {/* kanban */}
-        <div>
+        <div className='border p-1 border-gray-200 rounded'>
 
         </div>
       </div>
