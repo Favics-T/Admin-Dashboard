@@ -43,6 +43,8 @@ const SideBar = () => {
             )}
           </div>
 
+          
+
           {/* Render children if active */}
           {children && activeIds[id] && (
             <div className="ml-4 border-l pl-3 border-[#EEEAF7]">

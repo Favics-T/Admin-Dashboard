@@ -20,7 +20,7 @@ const SideBarProvider = ({ children }) => {
 const sidebarToggle = (id)=>{
   setActiveIds((prevId)=>({
     ...prevId, 
- // toggles only aative id
+ // toggles only active id
        [id]:!prevId[id]
   }))
 }
