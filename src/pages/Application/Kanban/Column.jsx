@@ -1,6 +1,5 @@
 import React from 'react'
 import { tokens } from './data';
-import { motion } from "framer-motion";
 import {
     Plus,
   } from "lucide-react";
