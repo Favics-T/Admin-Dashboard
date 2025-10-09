@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import AvatarStack from '../../../components/AvatarStack'
 import { IoMdShare } from "react-icons/io";
 import { Search, Calendar, ChevronDown } from "lucide-react";
-import Kanbans from '../KanbanComponents/KanbanBody';
 
 
 const KanbanHeader = () => {

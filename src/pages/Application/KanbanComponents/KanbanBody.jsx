@@ -11,10 +11,12 @@ const KanbanBody = () => {
 
   return (
     <div>
-      <div className='border grid grid-cols-3 gap-2   border-gray-200 p-1 rounded-lg'>
+      <div className='border p-6 grid grid-cols-3 gap-2   border-gray-200  rounded-lg'>
      {
       kanbanData.map(({type})=>(
-        <CardBody type={type}/>
+        <CardBody type={type}>
+          
+        </CardBody>
       ))
      }
       

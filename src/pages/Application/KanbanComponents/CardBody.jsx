@@ -3,8 +3,8 @@ import React from 'react'
 
 const CardBody = ({children,type}) => {
     return(
-        <div className='border shadow-xl border-gray-200 rounded h-full'>
-            <div className='p-2 bg-[#e1dde7] border-t-2 border-[#6E39CB] flex justify-between'>
+        <div className='border shadow-md border-gray-200 rounded h-full'>
+            <div className={`p-2 bg-[#e1dde7] border-t-2 ${type === 'To Do Task' ? 'border-gray-400':"border-[#6E39CB]"}  flex justify-between`}>
                 <h1>{type}</h1>
                 <h1>-</h1>
             </div>

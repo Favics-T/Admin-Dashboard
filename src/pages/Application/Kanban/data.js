@@ -109,3 +109,141 @@ export const kanbanData =[
     }
 
 ]
+
+export  const tasks = {
+  todo: [
+    {
+      id: "t1",
+      title: "Website revamp",
+      team: "Cisco Team",
+      date: "08",
+      comments: 4,
+      attachments: 3,
+      members: ["al", "br", "cm"],
+    },
+    {
+      id: "t2",
+      title: "Create a new theme",
+      team: "Design Team",
+      date: "12",
+      comments: 2,
+      attachments: 1,
+      members: ["dn", "ev"],
+      tag: { label: "High", tone: "high" },
+    },
+    {
+      id: "t3",
+      title: "Improve social banners",
+      team: "Marketing",
+      date: "15",
+      comments: 6,
+      attachments: 2,
+      members: ["cm", "fg", "al"],
+    },
+    {
+      id: "t4",
+      title: "Health app",
+      team: "Design Team",
+      date: "18",
+      comments: 0,
+      attachments: 0,
+      members: ["ev"],
+    },
+  ],
+  progressA: [
+    {
+      id: "p1",
+      title: "Cloud computing",
+      team: "Gatia Team",
+      date: "09",
+      comments: 9,
+      attachments: 5,
+      members: ["al", "br", "cm", "dn"],
+      tag: { label: "On track", tone: "ok" },
+    },
+    {
+      id: "p2",
+      title: "Update subscription",
+      team: "Sales",
+      date: "10",
+      comments: 8,
+      attachments: 4,
+      members: ["cm", "fg"],
+    },
+    {
+      id: "p3",
+      title: "Poster design",
+      team: "Design",
+      date: "11",
+      comments: 3,
+      attachments: 2,
+      members: ["al", "ev"],
+    },
+  ],
+  progressB: [
+    {
+      id: "pb1",
+      title: "Landing page",
+      team: "Design Team",
+      date: "07",
+      comments: 13,
+      attachments: 8,
+      members: ["al", "br", "cm", "dn"],
+    },
+    {
+      id: "pb2",
+      title: "Food app design",
+      team: "UI Team",
+      date: "09",
+      comments: 7,
+      attachments: 4,
+      members: ["cm", "fg"],
+      tag: { label: "Blocked", tone: "warn" },
+    },
+    {
+      id: "pb3",
+      title: "Web design",
+      team: "Agency",
+      date: "10",
+      comments: 12,
+      attachments: 7,
+      members: ["al", "ev"],
+    },
+    {
+      id: "pb4",
+      title: "Flyer design",
+      team: "Design Team",
+      date: "11",
+      comments: 8,
+      attachments: 5,
+      members: ["dn", "cm", "fg"],
+    },
+    {
+      id: "pb5",
+      title: "Cloud computing",
+      team: "Gatia Team",
+      date: "12",
+      comments: 9,
+      attachments: 5,
+      members: ["al", "br", "cm"],
+    },
+  ],
+};
+
+export const members =[
+    {id:'al', name:"Alice Lim"},
+    {id:"br", name:"Brian Ross"},
+    {id:"cm", name:"Carmen Mo"},
+     {id:'dn', name:"Dino N."},
+    {id:"ev", name:"Evan V"},
+    {id:"fg", name:"Faye G"}
+]
+
+export const tokens = {
+  bg: "#FBFBFD",
+  panel: "#FFFFFF",
+  border: "#EAEAF2",
+  textMuting: "#6B7280",
+  primary: "#6C5CE7", 
+  primarySoft: "#F3F0FF",
+};
