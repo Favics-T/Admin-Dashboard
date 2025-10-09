@@ -1,5 +1,5 @@
 import React from 'react'
-import AvatarStack from '../../../components/AvatarStack'
+import AvatarStack from '../../../../components/AvatarStack'
 
 const KanbanComponent = ({title, team,days,attach,message}) => {
   return (

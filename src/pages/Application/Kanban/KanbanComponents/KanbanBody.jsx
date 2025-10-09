@@ -1,6 +1,6 @@
 import { Kanban } from 'lucide-react'
 import React from 'react'
-import { kanbanData } from '../Kanban/data'
+import { kanbanData } from '../data'
 import KanbanComponent from './KanbanComponent'
 import ToDoTask from './ToDoTask'
 import InProgress1 from './InProgress1'
