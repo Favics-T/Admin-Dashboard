@@ -8,7 +8,7 @@ const steps = [
 ];
 
 
-export default function Stepper({ currentStep, setCurrentStep }) {
+  function Stepper({ currentStep, setCurrentStep }) {
   return (
     <nav aria-label="Progress" className="w-full">
       <ol className="max-w-3xl mx-auto flex flex-col md:flex-row items-start md:items-center md:space-x-0">
@@ -31,3 +31,5 @@ export default function Stepper({ currentStep, setCurrentStep }) {
     </nav>
   );
 }
+
+export default Stepper

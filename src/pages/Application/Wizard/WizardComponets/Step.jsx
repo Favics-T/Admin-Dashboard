@@ -44,4 +44,5 @@ function Step({ step, state, onClick, isLast }) {
     </li>
   );
 }
+
 export default Step
