@@ -14,22 +14,22 @@ export default function AboutSection({ onNext }) {
   const [avatar, setAvatar] = useState(null);
   const [error, setError] = useState("");
 
-  // --- handle change ---
+  
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-  // --- handle avatar ---
+  // avataar
   function handleAvatarChange(dataUrl) {
     setAvatar(dataUrl);
   }
 
-  // --- improved handleSubmit logic ---
+ 
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Validate important fields
+    // Validation
     if (!form.firstName.trim() || !form.email.trim()) {
       setError("Please fill required fields.");
       return;

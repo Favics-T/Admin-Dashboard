@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import WizardHeader from "./WizardComponets/WizardHeader";
-// import AboutF from "./Steps/AboutForm";
 import About from './WizardPages/About'
 import Account from './WizardPages/Account'
 import Address from './WizardPages/Address'

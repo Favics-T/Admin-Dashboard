@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Avatar from '../../../../assets/asset/Image1.png'
 
 export default function AvatarUploader({ name = "Profile name", subtitle = "Upload a photo", avatar, onChange }) {
   const fileRef = useRef();
@@ -18,7 +19,7 @@ export default function AvatarUploader({ name = "Profile name", subtitle = "Uplo
       <div className="flex-shrink-0">
         <div className="relative">
           <img
-            src={avatar || "/placeholder-avatar.png"}
+            src={avatar || `${Avatar}`}
             alt={`${name} avatar`}
             className="w-20 h-20 rounded-full object-cover shadow-sm border border-gray-100"
           />
