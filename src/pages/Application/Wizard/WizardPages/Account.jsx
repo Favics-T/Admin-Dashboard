@@ -1,34 +1,70 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { WizardContext } from "../../../../Context/WizardContext";
 
-const title =['Design', 'Develop', 'Code','Design', 'Develop', 'Code','Design', 'Develop', 'Code', ]
+const hobbiesList = [
+  "Design",
+  "Develop",
+  "Code",
+  "Draw",
+  "Read",
+  "Dance",
+  "Sing",
+  "Write",
+  "Cook",
+];
 
-const Account = () => {
+export default function Account() {
+  const { form, handleCheckbox, nextStep, prevStep } =
+    useContext(WizardContext);
+
   return (
-    <div className='bg-white rounded-lg py-8'>
-     <div className='  items-center justify-center flex flex-col gap-8 px-28 '>
-      <div className='borde'>
-        <h1 className='text-center'>What are you doing?(checkboxes)</h1>
-        <p>Give us more details about you? What do you enjoy doing in your spare time?</p>
+    <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm space-y-6">
+      <header className="text-center">
+        <h1 className="text-xl font-semibold">What are your interests?</h1>
+        <p className="text-gray-500 text-sm">
+          Choose what you enjoy doing in your free time.
+        </p>
+      </header>
+
+      <div className="grid grid-cols-3 gap-4">
+        {hobbiesList.map((hobby) => (
+          <label
+            key={hobby}
+            className={`p-4 border rounded-lg text-center cursor-pointer transition ${
+              form.hobbies.includes(hobby)
+                ? "bg-[#6E39CB] text-white"
+                : "bg-gray-50 hover:bg-gray-100"
+            }`}
+          >
+            <input
+              type="checkbox"
+              name="hobbies"
+              value={hobby}
+              checked={form.hobbies.includes(hobby)}
+              onChange={() => handleCheckbox(hobby)}
+              className="hidden"
+            />
+            {hobby}
+          </label>
+        ))}
       </div>
 
-      <div className='grid gap-4 items-center grid-cols-3'>
-        {
-          title.map((title, index)=>(
-            <div className='bg-white p-4 items-center flex justify-center shadow-lg gap-4' key={index}>
-             <h1 className='text-[#3A3541] Lato'>{title} </h1> 
-            </div>
-          ))
-        }
+      <div className="flex justify-between">
+        <button
+          type="button"
+          onClick={prevStep}
+          className="px-4 py-2 rounded-lg border text-gray-700"
+        >
+          Back
+        </button>
+        <button
+          type="button"
+          onClick={nextStep}
+          className="px-5 py-2 rounded-lg bg-[#6E39CB] text-white font-medium"
+        >
+          Next
+        </button>
       </div>
-
-      
-     </div>
-     <div className='justify-end w-full  flex'>
-        <button className=''>Next</button>
-     </div>
-     
     </div>
-  )
+  );
 }
-
-export default Account
