@@ -1,5 +1,5 @@
 import React from "react";
-import { formatDay } from "../utils/dateUtils";
+import { formatDay } from "../../../utils/dateUtils";
 import EventChip from "./EventChip";
 
 export default function DayCell({ date, isCurrentMonth, events = [] }) {

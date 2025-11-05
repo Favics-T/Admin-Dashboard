@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CalendarHeader from "./components/CalendarHeader";
-import CalendarGrid from "./components/CalendarGrid";
-import SidebarDetails from "./components/SidebarDetails";
-import { events } from "./data/events";
+import CalendarHeader from "./CalendarHeader";
+import CalendarGrid from "./CalendarGrid";
+import SidebarDetails from "./SidebarDetails";
+import { events } from "../../../data/events";
 
 export default function Calendar() {
    const [date] = useState(new Date(2022, 0, 1)); 
@@ -24,7 +24,7 @@ export default function Calendar() {
         </div>
 
         
-        <div className="bg-card rounded-lg p-4 md:p-6 border border-border shadow-sm">
+        <div className="bg-card rounded-lg p-4 md:p-6 border-border shadow-sm">
           <CalendarHeader monthLabel="January 2022" onPrev={handlePrev} onNext={handleNext} />
           <CalendarGrid year={year} month={month} events={events} />
         </div>

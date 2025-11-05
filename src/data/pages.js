@@ -76,7 +76,7 @@ export const sidebarList = [
       { title: "Kanban", path: "/application/kanban" },
       { title: "Wizard", path: "/application/wizard" },
       { title: "Data Tables", path: "/application/datatables" },
-      { title: "Calendar", path: "/application/calendar" },
+      { title: "Calendar", path: "/application/calendar/Calendar" },
     ],
   },
   {

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SidebarDetails({ events, onSelect }) {
   return (
-    <aside className="w-full md:w-72 p-4 bg-card rounded-lg border border-border">
+    <aside className="w-full md:w-72 p-4 bg-card rounded-lg shadow-xl border-border">
       <h2 className="text-sm font-semibold mb-2">Details Day</h2>
       <p className="text-xs text-muted mb-4">Don't miss scheduled events</p>
 

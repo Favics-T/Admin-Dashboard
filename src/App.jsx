@@ -28,7 +28,8 @@ import Dashboard from './pages/Home/Dashboard';
 import PricingPage from './pages/Pages/PricingPage';
 import Wizard from './pages/Application/Wizard/Wizard';
 import DataTables from './pages/Application/DataTables/DataTables';
-import { Calendar } from 'lucide-react';
+// import { Calendar } from 'lucide-react';
+import Calendar from './pages/Application/Calendar/Calendar';
 // import NewProducts from './pages/ECommerce/Overview/Products/NewProducts';
 import NewProducts from './pages/ECommerce/Overview/Products/NewProduct/NewProducts'
 import EditProducts from './pages/ECommerce/Overview/Products/EditProducts';
