@@ -29,7 +29,8 @@ import PricingPage from './pages/Pages/PricingPage';
 import Wizard from './pages/Application/Wizard/Wizard';
 import DataTables from './pages/Application/DataTables/DataTables';
 import { Calendar } from 'lucide-react';
-import NewProducts from './pages/ECommerce/Overview/Products/NewProducts';
+// import NewProducts from './pages/ECommerce/Overview/Products/NewProducts';
+import NewProducts from './pages/ECommerce/Overview/Products/NewProduct/NewProducts'
 import EditProducts from './pages/ECommerce/Overview/Products/EditProducts';
 import OrderList from './pages/ECommerce/Orders/OrderList';
 import OrderDetail from './pages/ECommerce/Orders/OrderDetail';
