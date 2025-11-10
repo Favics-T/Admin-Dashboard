@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react'
 
 export const EcommerceContext = createContext();
 
-const EcommerceContext = ({children}) => {
+const EcommerceProvider = ({children}) => {
 
       const [form, setForm]= useState({
         name:"",
@@ -30,4 +30,4 @@ const EcommerceContext = ({children}) => {
   )
 }
 
-export default EcommerceContext
+export default EcommerceProvider
