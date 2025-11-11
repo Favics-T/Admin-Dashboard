@@ -9,6 +9,8 @@ import React from "react";
 function StepCircle({ index, state }) {
   const base =
     "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors duration-300";
+
+
   if (state === "current")
     return (
       <div
@@ -27,6 +29,7 @@ function StepCircle({ index, state }) {
         ✓
       </div>
     );
+    
   // upcoming
   return (
     <div className={`${base} bg-gray-100 text-gray-500`} aria-hidden="true">
