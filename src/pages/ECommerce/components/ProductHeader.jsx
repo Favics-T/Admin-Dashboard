@@ -1,44 +1,33 @@
-import { div } from 'framer-motion/client'
 import React from 'react'
+import Step from './Step';
 
-const HeaderComponent = ({num, title})=>
-{
-    return(
-       <div className='flex justify-center items-center '>
-      <div className='flex '>
+function ProductHeader({currentStep}) {
+    const steps = [
+        {id:1, title:"Product Info"},
+        {id:2, title:"Media"},
+        {id:3, title:"Social"},
+        {id:4, title:"Pricing"}
+    ];
 
-            <div className='flex gap-3 items-center'>
-                <h1 className='text-white bg-[#6E39CB purpleBackground px-4 py-2 text-lg  rounded-full'>
-                    {num}</h1>
-                <h1 className='text-md font-medium purple'>
-                   {title}
-                    </h1>
+    const stepStates = steps.map((step)=>{
+        if(step.id < currentStep)
+            return {...step, state:"completed"}
 
-                {/* Line Connecctor */}
-                    <div className='purpleBackground h-1 w-24 '>
-
-                    </div>
-            </div>
-      </div>
-    </div>
-    )
-}
-const header = [
-    {num:1, title:"Product Info"},
-    {num:2, title:"Media"},
-    {num:3, title:"Social"},
-    {num:4, title:"Pricing"}
-]
-const ProductHeader = () => {
+        if(step.id === currentStep)
+            return {...step, state:"current"};
+            return {...step,  state:'upcoming'};
+   })
   return (
-    <div className='flex gap-4 items-center justify-center w-full'>
-        {
-            header.map(({num,title})=>(
-                <HeaderComponent num={num} title={title} />
-            ))
-        }
-    </div>
-
+   <nav aria-label = "Progress" className='w-full'>
+    <ol
+        role= 'list'
+        className="max-w-3xl mx-auto flex flex-col md:flex-row items-start md:items-center md:space-x-0"
+    >
+        {stepStates.map((s, idx)=>(
+            <Step key={s.id} step={s} isLast={idx === stepStates.length -1} />
+        ))}
+    </ol>
+   </nav>
   )
 }
 

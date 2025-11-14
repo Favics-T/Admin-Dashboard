@@ -4,6 +4,7 @@ export const EcommerceContext = createContext();
 
 const EcommerceProvider = ({children}) => {
 
+      const [step, setStep] = useState(1);
       const [form, setForm]= useState({
         name:"",
         weight:"",
@@ -24,7 +25,8 @@ const EcommerceProvider = ({children}) => {
 
 
   return (
-    <EcommerceContext.Provider value={{form, setForm}}>
+    <EcommerceContext.Provider value={{ form, setForm,
+                                      step,setStep}}>
       {children}
     </EcommerceContext.Provider>
   )

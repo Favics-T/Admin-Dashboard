@@ -12,7 +12,7 @@ function Step({ step, isLast }) {
     <li
       className="flex md:items-center md:flex-1"
       role="listitem"
-      // aria-current={isCurrent ? "step" : undefined}
+       aria-current={isCurrent ? "step" : undefined}
     >
       <div className="flex items-center md:w-full">
         <StepCircle index={id} state={state} />
