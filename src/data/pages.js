@@ -16,6 +16,10 @@ export const sidebarList = [
         title: "Analytics", 
         path: "/home/analytics"
        },
+       {
+        title: "Talents",
+        path: '/home/talents'
+       }
     ],
   },
   {

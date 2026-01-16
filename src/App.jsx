@@ -35,6 +35,7 @@ import Product from './pages/ECommerce/NewProduct/Product';
 import EditProducts from './pages/ECommerce/Overview/Products/EditProducts';
 import OrderList from './pages/ECommerce/Orders/OrderList';
 import OrderDetail from './pages/ECommerce/Orders/OrderDetail';
+import TalentTable from './pages/talent/components/TalentTable';
 
 const App = () => {
   return (
@@ -78,6 +79,7 @@ const App = () => {
          <Route path='e-commerce/overview/products/editproduct' element={<EditProducts />}/>
          <Route path='/e-commerce/overview/orders/orderlist' element={<OrderList />}/>
          <Route path='/e-commerce/overview/orders/orderdetail' element={<OrderDetail />}/>
+         <Route path='/home/talents' element={<TalentTable />}/>
           <Route />
         </Route>
 

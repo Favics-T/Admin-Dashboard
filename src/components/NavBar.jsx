@@ -6,6 +6,7 @@ import { SideBarContext } from "../Context/SideBarContext";
 const routeTitleMap = {
   '/home': 'Dashboard',
   '/home/analytics': 'Analytics',
+  '/home/talents':"Talents",
   '/dashboard': 'Dashboard',
   '/pages/profile/teams': 'Profile/Team',
   '/pages/profile/profileoverview': 'Profile/Profile Overview',
