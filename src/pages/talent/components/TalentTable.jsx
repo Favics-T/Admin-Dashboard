@@ -1,45 +1,68 @@
 import { useState } from 'react';
+// import useTalents from '../hooks/useTalents';
 import Talent from '../page/Talent';
+// import useDebounce from '../hooks/useDebounce';
+import useDebounce from '../hook/useDebounce';
 import SearchInput from '../components/SearchInput';
-import TalentCard from './TalentCard';
+import TalentCard from '../components/TalentCard';
+import Pagination from '../components/Pagination';
+import SkeletonCard from '../components/SkeletonCard';
 
-const TalentTable = () => {
+const ITEMS_PER_PAGE = 10;
+
+const Talents = () => {
   const { talents, loading, error } = Talent();
   const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const debouncedSearch = useDebounce(search);
 
   const filteredTalents = talents.filter((talent) =>
-    talent.name.toLowerCase().includes(search.toLowerCase())
+    talent.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
+
+  // Pagination 
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedTalents = filteredTalents.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
+
+  const totalPages = Math.ceil(filteredTalents.length / ITEMS_PER_PAGE);
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-        <div className='flex items-center'>
- <h1 className="text-2xl font-bold mb-4 bg-purple-500 w-44 rounded-xl text-center p-2 text-white ">Hire Talents</h1>
+      <h1 className="text-2xl font-bold mb-4">Talents</h1>
+
+      <SearchInput value={search} onChange={setSearch} />
+
+      {loading && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
         </div>
-     
-
-     <div className='bg-white p-12 rounded-2xl'>
-
-<SearchInput value={search} onChange={setSearch} />
-
-      {loading && <p className="mt-4">Loading talents...</p>}
-      {error && <p className="mt-4 text-red-500">{error}</p>}
-
-      {!loading && filteredTalents.length === 0 && (
-        <p className="mt-4 text-gray-500">No talents found.</p>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-        {filteredTalents.map((talent) => (
-          <TalentCard key={talent.id} talent={talent} />
-        ))}
-      </div>
+      {error && <p className="text-red-500 mt-4">{error}</p>}
 
-     </div>
+      {!loading && (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            {paginatedTalents.map((talent) => (
+              <TalentCard key={talent.id} talent={talent} />
+            ))}
+          </div>
 
-      
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </>
+      )}
     </div>
   );
 };
 
-export default TalentTable;
+export default Talents;
