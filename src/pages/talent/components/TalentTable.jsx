@@ -1,7 +1,5 @@
 import { useState } from 'react';
-// import useTalents from '../hooks/useTalents';
 import Talent from '../page/Talent';
-// import useDebounce from '../hooks/useDebounce';
 import useDebounce from '../hook/useDebounce';
 import SearchInput from '../components/SearchInput';
 import TalentCard from '../components/TalentCard';
