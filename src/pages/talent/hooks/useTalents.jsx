@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { getTalents } from '../api/talentsApi';
+import { getTalents } from '../api/talentApi';
 
-const useTalents = (page, limit, search = '') => {
+
+const useTalents = (page, limit, search = '', filters = {}) => {
   const [talents, setTalents] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -13,8 +14,7 @@ const useTalents = (page, limit, search = '') => {
         setLoading(true);
         setError(null);
 
-        // Server-side search + pagination
-        const { data, totalCount } = await getTalents(page, limit, search);
+        const { data, totalCount } = await getTalents(page, limit, search, filters);
 
         setTalents(data);
         setTotal(totalCount);
@@ -26,7 +26,7 @@ const useTalents = (page, limit, search = '') => {
     };
 
     fetchTalents();
-  }, [page, limit, search]);
+  }, [page, limit, search, JSON.stringify(filters)]); // Watch filters as dependency
 
   return { talents, total, loading, error };
 };
