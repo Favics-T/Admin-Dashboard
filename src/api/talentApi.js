@@ -1,12 +1,19 @@
-
 const BASE_URL = 'http://localhost:4000';
 
-export const getTalent = async()=>{
-    const res = await fetch (`${BASE_URL}/talents`);
+export const getTalents = async (page = 1, limit = 10) => {
+  const res = await fetch(
+    `${BASE_URL}/talents?_page=${page}&_limit=${limit}`
+  );
 
-    if(!res.ok){
-        throw new Error('Could not fetch talent')
-    }
+  if (!res.ok) {
+    throw new Error('Failed to fetch talents');
+  }
 
-    return res.json();
-}
+  const data = await res.json();
+  const totalCount = res.headers.get('X-Total-Count');
+
+  return {
+    data,
+    totalCount: Number(totalCount),
+  };
+};
