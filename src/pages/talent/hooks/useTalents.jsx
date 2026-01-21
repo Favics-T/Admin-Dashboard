@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getTalents } from '../api/talentApi';
+import { getTalents } from '../api/talentsApi';
 
-
-const useTalents = (page, limit, search = '', filters = {}) => {
+const useTalents = (page, limit, search, filters) => {
   const [talents, setTalents] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -14,7 +13,12 @@ const useTalents = (page, limit, search = '', filters = {}) => {
         setLoading(true);
         setError(null);
 
-        const { data, totalCount } = await getTalents(page, limit, search, filters);
+        const { data, totalCount } = await getTalents(
+          page,
+          limit,
+          search,
+          filters
+        );
 
         setTalents(data);
         setTotal(totalCount);
@@ -26,7 +30,7 @@ const useTalents = (page, limit, search = '', filters = {}) => {
     };
 
     fetchTalents();
-  }, [page, limit, search, JSON.stringify(filters)]); // Watch filters as dependency
+  }, [page, limit, search, JSON.stringify(filters)]);
 
   return { talents, total, loading, error };
 };
