@@ -5,13 +5,28 @@ import SearchInput from '../components/SearchInput';
 import TalentCard from '../components/TalentCard';
 import Pagination from '../components/Pagination';
 import SkeletonCard from '../components/SkeletonCard';
+import FilterSelect from '../components/FilterSelect';
 
 const ITEMS_PER_PAGE = 10;
+
+const roleOptions = [
+  'Frontend Developer',
+  'Backend Developer',
+  'Fullstack Developer',
+  'Designer',
+];
+
+const locationOptions = ['Lagos', 'Abuja', 'Remote'];
+const experienceOptions = ['Junior', 'Mid', 'Senior'];
 
 const Talents = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState('');
-  const [filters, setFilters] = useState({ role: '' });
+  const [filters, setFilters] = useState({
+    role: '',
+    location: '',
+    experience: '',
+  });
 
   const debouncedSearch = useDebounce(search, 500);
 
@@ -24,11 +39,15 @@ const Talents = () => {
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
+  const updateFilter = (key, value) => {
+    setFilters((prev) => ({ ...prev, [key]: value }));
+    setCurrentPage(1);
+  };
+
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-5xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Talents</h1>
 
-      {/* Search input */}
       <SearchInput
         value={search}
         onChange={(val) => {
@@ -37,21 +56,27 @@ const Talents = () => {
         }}
       />
 
-      {/* Role filter */}
-      <select
-        className="border rounded p-2 mt-4"
-        value={filters.role}
-        onChange={(e) => {
-          setFilters({ ...filters, role: e.target.value });
-          setCurrentPage(1); // reset page
-        }}
-      >
-        <option value="">All Roles</option>
-        <option value="Frontend Developer">Frontend Developer</option>
-        <option value="Backend Developer">Backend Developer</option>
-        <option value="Fullstack Developer">Fullstack Developer</option>
-        <option value="Designer">Designer</option>
-      </select>
+      {/* Filters */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <FilterSelect
+          label="Role"
+          value={filters.role}
+          options={roleOptions}
+          onChange={(val) => updateFilter('role', val)}
+        />
+        <FilterSelect
+          label="Location"
+          value={filters.location}
+          options={locationOptions}
+          onChange={(val) => updateFilter('location', val)}
+        />
+        <FilterSelect
+          label="Experience"
+          value={filters.experience}
+          options={experienceOptions}
+          onChange={(val) => updateFilter('experience', val)}
+        />
+      </div>
 
       {loading && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
