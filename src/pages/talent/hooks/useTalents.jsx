@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getTalents } from '../api/talentsApi';
+// import { getTalents } from '../api/talentsApi';
+import { getTalents } from '../api/talentApi'
 
 const useTalents = (page, limit, search, filters) => {
   const [talents, setTalents] = useState([]);

@@ -1,10 +1,14 @@
-import React from "react";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+
+const Pagination = ({ currentPage, totalPages, onPageChange, primaryColor = 'purple' }) => {
+  
+  
   if (totalPages <= 1) return null;
 
+  const activeClass = `bg-${primaryColor}-500 text-white border-${primaryColor}-500`;
+
   return (
-    <div className="flex justify-center gap-2 mt-8">
+    <div className="flex gap-2">
       <button
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
@@ -18,7 +22,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           key={i}
           onClick={() => onPageChange(i + 1)}
           className={`px-3 py-1 border rounded ${
-            currentPage === i + 1 ? 'bg-blue-500 text-white' : ''
+            currentPage === i + 1 ? activeClass : ''
           }`}
         >
           {i + 1}

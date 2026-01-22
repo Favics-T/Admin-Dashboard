@@ -5,7 +5,7 @@ const SearchInput = ({ value, onChange }) => {
       placeholder="Search talent..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full p-3  rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+      className="w-full md:w-80 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
     />
   );
 };
