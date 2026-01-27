@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-// import { getTalents } from '../api/talentsApi';
-import { getTalents } from '../api/talentApi'
 
-const useTalents = (page, limit, search, filters) => {
+const useTalents = (page, limit, search, sortBy, order) => {
   const [talents, setTalents] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -14,15 +12,33 @@ const useTalents = (page, limit, search, filters) => {
         setLoading(true);
         setError(null);
 
-        const { data, totalCount } = await getTalents(
-          page,
-          limit,
-          search,
-          filters
+        const params = new URLSearchParams({
+          _page: page,
+          _limit: limit,
+        });
+
+        if (search) {
+          params.append('q', search);
+        }
+
+        if (sortBy) {
+          params.append('_sort', sortBy);
+          params.append('_order', order);
+        }
+
+        const res = await fetch(
+          `http://localhost:4000/talents?${params.toString()}`
         );
 
+        if (!res.ok) {
+          throw new Error('Failed to fetch talents');
+        }
+
+        const data = await res.json();
+        const totalCount = res.headers.get('X-Total-Count');
+
         setTalents(data);
-        setTotal(totalCount);
+        setTotal(Number(totalCount));
       } catch (err) {
         setError(err.message);
       } finally {
@@ -31,7 +47,7 @@ const useTalents = (page, limit, search, filters) => {
     };
 
     fetchTalents();
-  }, [page, limit, search, JSON.stringify(filters)]);
+  }, [page, limit, search, sortBy, order]);
 
   return { talents, total, loading, error };
 };
