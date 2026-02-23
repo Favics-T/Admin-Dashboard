@@ -2,7 +2,7 @@ import { IoMdMore } from "react-icons/io";
 import Avatar from "./Avatar";
 import { getProjectIcon } from "./projectIconMap";
 
-const ProjectCard = ({ project, teamImages }) => {
+const ProjectCard = ({ project, teamImages, onDelete }) => {
   const { title, desc, tasks, date, color, iconKey } = project;
   const Icon = getProjectIcon(iconKey);
 
@@ -23,9 +23,21 @@ const ProjectCard = ({ project, teamImages }) => {
             </div>
           </div>
         </div>
-        <button type="button" aria-label="Open project options">
-          <IoMdMore className="text-gray-400 cursor-pointer hover:text-gray-600" />
-        </button>
+        <div className="flex items-center gap-2">
+          {onDelete && (
+            <button
+              type="button"
+              aria-label={`Delete ${title}`}
+              onClick={() => onDelete(project.id)}
+              className="rounded bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+            >
+              Delete
+            </button>
+          )}
+          <button type="button" aria-label="Open project options">
+            <IoMdMore className="text-gray-400 cursor-pointer hover:text-gray-600" />
+          </button>
+        </div>
       </div>
 
       {/* Description */}

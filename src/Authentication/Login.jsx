@@ -6,7 +6,7 @@ import { useAuth } from "../Context/useAuth";
 
 const Login = () => {
   const { formData, updateForm } = useForm();
-  const { login } = useAuth();
+  const { login, authLoading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -17,9 +17,9 @@ const Login = () => {
 
   const redirectTo = location.state?.from ?? "/home";
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const result = login({ email: formData.email, password: formData.password });
+    const result = await login({ email: formData.email, password: formData.password });
 
     if (result.ok) {
       navigate(redirectTo, { replace: true });
@@ -47,7 +47,12 @@ const Login = () => {
             />
           ))}
 
-          <Button label="Sign in" type="submit" style="bg-[#0039BA] text-white" />
+          <Button
+            label={authLoading ? "Signing in..." : "Sign in"}
+            type="submit"
+            disabled={authLoading}
+            style="bg-[#0039BA] text-white"
+          />
         </form>
 
         <Button

@@ -6,7 +6,7 @@ import { useAuth } from "../Context/useAuth";
 
 const SignUp = () => {
   const { formData, updateForm, resetForm } = useForm();
-  const { register } = useAuth();
+  const { register, authLoading } = useAuth();
   const navigate = useNavigate();
 
   const inputFields = [
@@ -16,9 +16,9 @@ const SignUp = () => {
     { placeholder: "Company", name: "company", type: "text", required: false },
   ];
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const result = register(formData);
+    const result = await register(formData);
 
     if (result.ok) {
       resetForm();
@@ -44,7 +44,12 @@ const SignUp = () => {
             />
           ))}
 
-          <Button label="Sign up" type="submit" style="bg-[#6E39CB] text-white" />
+          <Button
+            label={authLoading ? "Creating account..." : "Sign up"}
+            type="submit"
+            disabled={authLoading}
+            style="bg-[#6E39CB] text-white"
+          />
         </form>
 
         <Button
