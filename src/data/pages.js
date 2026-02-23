@@ -1,7 +1,6 @@
 import { FaHome, FaFileAlt, FaChevronUp } from "react-icons/fa";
 import { LiaOpencart } from "react-icons/lia";
 import { AiOutlineSafety } from "react-icons/ai";
-import { path } from "framer-motion/client";
 
 export const sidebarList = [
   {
@@ -93,8 +92,8 @@ export const sidebarList = [
           {
             title: "Products",
             children: [
-              { title: "New Product", path: "e-commerce/overview/products/newproduct" },
-              { title: "Edit Product", path: "e-commerce/overview/products/editproduct" },
+              { title: "New Product", path: "/e-commerce/overview/products/newproduct" },
+              { title: "Edit Product", path: "/e-commerce/overview/products/editproduct" },
             ],
           },
         ],

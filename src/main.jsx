@@ -6,17 +6,20 @@ import UserProvider from './Context/UserContext.jsx'
 import SideBarProvider from './Context/SideBarContext.jsx'
 import WizardProvider from './Context/WizardContext.jsx'
 import EcommerceProvider from './Context/EcommerceContext.jsx'
+import AuthProvider from './Context/AuthContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <EcommerceProvider>
-    <WizardProvider>
-    <SideBarProvider>
-   <UserProvider>
-    <App />
-    </UserProvider>
-     </SideBarProvider>
-      </WizardProvider>
+    <AuthProvider>
+      <EcommerceProvider>
+        <WizardProvider>
+          <SideBarProvider>
+            <UserProvider>
+              <App />
+            </UserProvider>
+          </SideBarProvider>
+        </WizardProvider>
       </EcommerceProvider>
+    </AuthProvider>
   </StrictMode>
 )

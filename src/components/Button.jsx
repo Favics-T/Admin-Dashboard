@@ -1,14 +1,12 @@
-import React from 'react'
+const Button = ({ label, style = "", type = "button", onClick, disabled = false }) => (
+  <button
+    type={type}
+    onClick={onClick}
+    disabled={disabled}
+    className={`w-full cursor-pointer rounded-md p-2 text-[16px] font-medium ${style}`}
+  >
+    {label}
+  </button>
+);
 
-const Button = ({label,style,onClick}) => {
-  return (
-    <div>
-      <button
-      onClick={onClick}
-      className={`${style} w-full rounded-md lato bg-[#6E39CB] text-white text-[16px] font-medium p-2 cursor-pointer `}
-      >{label}</button>
-    </div>
-  )
-}
-
-export default Button
+export default Button;
