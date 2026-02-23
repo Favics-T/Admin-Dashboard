@@ -1,9 +1,10 @@
 import { IoMdMore } from "react-icons/io";
 import Avatar from "./Avatar";
+import { getProjectIcon } from "./projectIconMap";
 
 const ProjectCard = ({ project, teamImages }) => {
-  const { title, desc, tasks, date, color, icon } = project;
-  const Icon = icon;
+  const { title, desc, tasks, date, color, iconKey } = project;
+  const Icon = getProjectIcon(iconKey);
 
   return (
     <div className="rounded-lg lato gap-6 p-4 text-[#89868D] shadow-lg hover:shadow-xl transition flex flex-col justify-between">

@@ -1,6 +1,3 @@
-import { FaSlack } from "react-icons/fa";
-import { SiAdobeindesign, SiAdobephotoshop } from "react-icons/si";
-
 export const projects = [
   {
     id: 1,
@@ -9,7 +6,7 @@ export const projects = [
     tasks: 30,
     date: "17.02.22",
     color: "bg-pink-100 text-pink-600",
-    icon: SiAdobeindesign,
+    iconKey: "adobe-indesign",
   },
   {
     id: 2,
@@ -18,7 +15,7 @@ export const projects = [
     tasks: 22,
     date: "09.02.22",
     color: "bg-[#E2F9FF] text-blue-500",
-    icon: SiAdobephotoshop,
+    iconKey: "adobe-photoshop",
   },
   {
     id: 3,
@@ -27,7 +24,7 @@ export const projects = [
     tasks: 13,
     date: "31.01.22",
     color: "bg-pink-100 text-[#4A154B]",
-    icon: FaSlack,
+    iconKey: "slack",
   },
   {
     id: 4,
@@ -36,7 +33,7 @@ export const projects = [
     tasks: 23,
     date: "20.02.22",
     color: "bg-blue-100 text-blue-600",
-    icon: FaSlack,
+    iconKey: "slack",
   },
   {
     id: 5,
@@ -45,7 +42,7 @@ export const projects = [
     tasks: 30,
     date: "20.02.22",
     color: "bg-orange-100 text-orange-600",
-    icon: SiAdobephotoshop,
+    iconKey: "adobe-photoshop",
   },
   {
     id: 6,
@@ -54,7 +51,7 @@ export const projects = [
     tasks: 32,
     date: "25.02.22",
     color: "bg-purple-100 text-purple-600",
-    icon: SiAdobeindesign,
+    iconKey: "adobe-indesign",
   },
   {
     id: 7,
@@ -63,7 +60,7 @@ export const projects = [
     tasks: 30,
     date: "20.02.22",
     color: "bg-orange-100 text-orange-600",
-    icon: SiAdobephotoshop,
+    iconKey: "adobe-photoshop",
   },
   {
     id: 8,
@@ -72,6 +69,6 @@ export const projects = [
     tasks: 30,
     date: "03.02.22",
     color: "bg-pink-100 text-pink-600",
-    icon: SiAdobeindesign,
+    iconKey: "adobe-indesign",
   },
 ];
