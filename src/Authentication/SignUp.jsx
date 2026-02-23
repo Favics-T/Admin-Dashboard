@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InputField from "./components/InputField";
 import Button from "../components/Button";
 import { useForm } from "../Context/UserContext";
-import { useAuth } from "../Context/AuthContext";
+import { useAuth } from "../Context/useAuth";
 
 const SignUp = () => {
   const { formData, updateForm, resetForm } = useForm();
@@ -65,3 +65,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+

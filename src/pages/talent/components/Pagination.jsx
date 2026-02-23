@@ -1,11 +1,5 @@
-
-
-const Pagination = ({ currentPage, totalPages, onPageChange, primaryColor = 'purple' }) => {
-  
-  
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   if (totalPages <= 1) return null;
-
-  const activeClass = `bg-${primaryColor}-500 text-white border-${primaryColor}-500`;
 
   return (
     <div className="flex gap-2">
@@ -22,7 +16,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, primaryColor = 'pur
           key={i}
           onClick={() => onPageChange(i + 1)}
           className={`px-3 py-1 border rounded ${
-            currentPage === i + 1 ? activeClass : ''
+            currentPage === i + 1 ? "border-purple-500 bg-purple-500 text-white" : ""
           }`}
         >
           {i + 1}

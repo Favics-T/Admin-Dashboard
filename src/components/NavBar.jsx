@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LuMenu, LuX } from "react-icons/lu";
 import { SideBarContext } from "../Context/SideBarContext";
-import { useAuth } from "../Context/AuthContext";
+import { useAuth } from "../Context/useAuth";
 
 const routeTitleMap = {
   "/home": "Dashboard",
@@ -151,3 +151,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

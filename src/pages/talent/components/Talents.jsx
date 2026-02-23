@@ -1,17 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import useTalents from '../hooks/useDebounce';
-import TalentTable from './TalentTable';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import useTalents from "../hooks/useTalents";
+import useDebounce from "../hooks/useDebounce";
+import Pagination from "./Pagination";
+import SearchInput from "./SearchInput";
+import SkeletonCard from "./SkeletonCard";
+import TalentTable from "./TalentTable";
 
 const ITEMS_PER_PAGE = 10;
 
 const Talents = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const pageFromUrl = Number(searchParams.get('page')) || 1;
-  const searchFromUrl = searchParams.get('search') || '';
-  const sortByFromUrl = searchParams.get('sortBy') || '';
-  const orderFromUrl = searchParams.get('order') || 'asc';
+  const pageFromUrl = Number(searchParams.get("page")) || 1;
+  const searchFromUrl = searchParams.get("search") || "";
+  const sortByFromUrl = searchParams.get("sortBy") || "";
+  const orderFromUrl = searchParams.get("order") || "asc";
 
   const [currentPage, setCurrentPage] = useState(pageFromUrl);
   const [search, setSearch] = useState(searchFromUrl);
@@ -30,33 +34,32 @@ const Talents = () => {
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
-  // Sync state → URL
   useEffect(() => {
-    setSearchParams({
-      page: currentPage,
-      search: debouncedSearch,
-      sortBy,
-      order,
-    });
+    const nextParams = {};
+    if (currentPage > 1) nextParams.page = String(currentPage);
+    if (debouncedSearch) nextParams.search = debouncedSearch;
+    if (sortBy) nextParams.sortBy = sortBy;
+    if (order !== "asc") nextParams.order = order;
+    setSearchParams(nextParams);
   }, [currentPage, debouncedSearch, sortBy, order, setSearchParams]);
 
-  // Reset page when filters change
   useEffect(() => {
     setCurrentPage(1);
   }, [debouncedSearch, sortBy, order]);
 
   const handleSort = (column) => {
     if (sortBy === column) {
-      setOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
-    } else {
-      setSortBy(column);
-      setOrder('asc');
+      setOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+      return;
     }
+
+    setSortBy(column);
+    setOrder("asc");
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">Talents</h1>
+    <div className="mx-auto max-w-6xl p-6">
+      <h1 className="mb-4 text-2xl font-bold">Talents</h1>
 
       <SearchInput value={search} onChange={setSearch} />
 
@@ -66,22 +69,15 @@ const Talents = () => {
         </div>
       )}
 
-      {error && <p className="text-red-500 mt-4">{error}</p>}
+      {error && <p className="mt-4 text-red-500">{error}</p>}
 
-      {!loading && (
+      {!loading && !error && (
         <>
-          <TalentTable
-            talents={talents}
-            sortBy={sortBy}
-            order={order}
-            onSort={handleSort}
-          />
+          <TalentTable talents={talents} sortBy={sortBy} order={order} onSort={handleSort} />
 
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-          />
+          <div className="mt-4">
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+          </div>
         </>
       )}
     </div>

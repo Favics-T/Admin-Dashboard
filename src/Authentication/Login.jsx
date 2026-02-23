@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import InputField from "./components/InputField";
 import Button from "../components/Button";
 import { useForm } from "../Context/UserContext";
-import { useAuth } from "../Context/AuthContext";
+import { useAuth } from "../Context/useAuth";
 
 const Login = () => {
   const { formData, updateForm } = useForm();
@@ -68,3 +68,4 @@ const Login = () => {
 };
 
 export default Login;
+

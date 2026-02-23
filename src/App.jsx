@@ -5,7 +5,7 @@ import SignUp from "./Authentication/SignUp";
 import SplashCard from "./Authentication/components/SplashCard";
 import MainLayout from "./components/MainLayout";
 import { ProtectedRoute, PublicOnlyRoute } from "./components/RouteGuards";
-import { useAuth } from "./Context/AuthContext";
+import { useAuth } from "./Context/useAuth";
 import DataTables from "./pages/Application/DataTables/DataTables";
 import Kanban from "./pages/Application/Kanban/Kanban";
 import Calendar from "./pages/Application/calendar/Calendar";
@@ -104,3 +104,4 @@ const App = () => {
 };
 
 export default App;
+

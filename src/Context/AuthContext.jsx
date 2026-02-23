@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 
 const REGISTERED_USER_KEY = "registeredUser";
 const AUTH_USER_KEY = "authUser";
@@ -18,7 +18,7 @@ const sanitizeUser = (user) => ({
   company: user?.company ?? "",
 });
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(() => readStoredJson(AUTH_USER_KEY));
@@ -77,14 +77,6 @@ const AuthProvider = ({ children }) => {
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within AuthProvider");
-  }
-  return context;
 };
 
 export default AuthProvider;

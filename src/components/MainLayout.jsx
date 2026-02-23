@@ -12,7 +12,7 @@ const MainLayout = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1  flex flex-col py-8  px-4 md:px- gap-4 md:gap-8">
+      <main className="flex flex-1 flex-col gap-4 px-4 py-8 md:px-6 md:gap-8">
         <NavBar />
         <div className="flex-1  overflow-auto flex md:justify-start justify-center items-center">
           <Outlet />

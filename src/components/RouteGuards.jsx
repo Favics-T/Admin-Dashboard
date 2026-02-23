@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
+import { useAuth } from "../Context/useAuth";
 
 export const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -21,3 +21,4 @@ export const PublicOnlyRoute = ({ children }) => {
 
   return children;
 };
+

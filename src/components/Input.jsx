@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Input = ({name,className,
   id,
   label,
@@ -16,8 +14,9 @@ const Input = ({name,className,
       <label htmlFor={name}>{label}{required && <span className='ml-1 text-red-500'>*</span> }</label>
       <input 
       className={`bg-[#DBDCDE] rounded-lg p-2 ${className}`}
-      type="text" //{type}
+      type={type}
       placeholder={placeholder}
+      value={value}
       onChange={onChange}
       autoComplete={autoComplete}
       required={required}
