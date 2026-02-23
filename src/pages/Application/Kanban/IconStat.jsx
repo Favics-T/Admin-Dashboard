@@ -1,5 +1,3 @@
-import React from 'react'
-
 function IconStat({ icon: Icon, value, label }) {
   return (
     <div

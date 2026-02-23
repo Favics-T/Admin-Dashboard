@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { CiUser, CiSearch } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
 import useIsMobile from "../../hooks/useIsMobile";
 import Logo from "../../assets/Logo.png";
 
 // FAQCard Component
-const FAQCard = ({ icon: Icon, desc, bgColor }) => (
+const FAQCard = ({ icon, desc, bgColor }) => {
+  const ItemIcon = icon;
+  return (
   <div className="flex w-full md:gap-8 gap-2 items-center bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 shadow-lg">
     <div className={`${bgColor} rounded-full p-2 md:p-4 flex-shrink-0`}>
-      <Icon className="text-white text-2xl" />
+      <ItemIcon className="text-white text-2xl" />
     </div>
     <p className="text-white lato text-sm md:text-base">{desc}</p>
   </div>
-);
+  );
+};
 
 // FAQ Data
 const faqList = [
@@ -61,17 +63,9 @@ const SplashCard = ({ onGetStarted }) => {
         {/* FAQ Section */}
         <div className="flex flex-col gap-4 justify-center w-full md:w-3/4">
           {isMobile ? (
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -50, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <FAQCard {...faqList[currentIndex]} />
-              </motion.div>
-            </AnimatePresence>
+            <div key={currentIndex} className="transition-opacity duration-500">
+              <FAQCard {...faqList[currentIndex]} />
+            </div>
           ) : (
             faqList.map(({ icon, desc, bgColor }) => (
               <FAQCard key={desc} icon={icon} desc={desc} bgColor={bgColor} />
