@@ -8,7 +8,7 @@ import { ProtectedRoute, PublicOnlyRoute } from "./components/RouteGuards";
 import { useAuth } from "./Context/useAuth";
 import DataTables from "./pages/Application/DataTables/DataTables";
 import Kanban from "./pages/Application/Kanban/Kanban";
-import Calendar from "./pages/Application/calendar/Calendar";
+import Calendar from "./pages/Application/Calendar/Calendar";
 import Wizard from "./pages/Application/Wizard/Wizard";
 import Analytics from "./pages/Home/Analytics";
 import Dashboard from "./pages/Home/Dashboard";
