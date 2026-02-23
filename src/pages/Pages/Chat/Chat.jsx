@@ -1,5 +1,5 @@
 import React, {  useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { sampleMessages,people } from "./data";
 import DateDivider from "./ChatComponent/DateDivider";
 import MessageBubble from "./ChatComponent/MessageBubble";
@@ -99,7 +99,7 @@ export default function Chat() {
       {/* Backdrop for mobile sidebar */}
       <AnimatePresence>
         {isMobileOpen && (
-          <motion.div
+          <Motion.div
             className="fixed inset-0 bg-black/30 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

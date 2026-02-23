@@ -1,4 +1,3 @@
-import { div } from 'framer-motion/client'
 import React from 'react'
 
 const actionList = [
@@ -30,7 +29,7 @@ const Action = () => {
             </div>
             {
                 actionList.map(({title,count})=>(
-                    <Card title={title} count={count} />
+                    <Card key={title} title={title} count={count} />
                 ))
             }
 

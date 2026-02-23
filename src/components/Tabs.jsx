@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const tabs = [
   { id: "home", label: "Home", content: "This is the Home tab" },
@@ -23,7 +23,7 @@ export default function Tabs() {
             `}
           >
             {activeTab === tab.id && (
-              <motion.div
+              <Motion.div
                 layoutId="active-pill"
                 className="absolute inset-0 bg-blue-500 rounded-lg"
                 transition={{ type: "spring", duration: 0.5 }}
@@ -40,7 +40,7 @@ export default function Tabs() {
           {tabs.map(
             (tab) =>
               activeTab === tab.id && (
-                <motion.div
+                <Motion.div
                   key={tab.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function Tabs() {
                   transition={{ duration: 0.3 }}
                 >
                   {tab.content}
-                </motion.div>
+                </Motion.div>
               )
           )}
         </AnimatePresence>

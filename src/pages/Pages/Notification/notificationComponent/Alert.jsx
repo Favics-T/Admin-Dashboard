@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { MdCancel } from "react-icons/md";
 const Alert = ({ variant = "primary", children, onClose }) => {
   const colors = {
@@ -13,7 +13,7 @@ const Alert = ({ variant = "primary", children, onClose }) => {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
@@ -31,7 +31,7 @@ const Alert = ({ variant = "primary", children, onClose }) => {
             <MdCancel size={16} />
           </button>
         )}
-      </motion.div>
+      </Motion.div>
     </AnimatePresence>
   );
 };

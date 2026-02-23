@@ -1,6 +1,6 @@
 import React from "react";
 import DayCell from "./DayCell";
-import { startOfMonth,endOfMonth,addDays,sameDay } from "../../../utils/dateUtils";
+import { startOfMonth,endOfMonth,addDays } from "../../../utils/dateUtils";
 
 
 export default function CalendarGrid({ year, month, events }) {

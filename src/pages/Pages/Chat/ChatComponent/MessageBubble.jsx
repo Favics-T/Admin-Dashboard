@@ -1,6 +1,6 @@
 import Avatar from "./Avatar";
 import Waveform from "./Waveform";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { IoIosMic } from "react-icons/io";
 
 const MessageBubble = ({
@@ -23,7 +23,7 @@ const MessageBubble = ({
         </div>
       )}
 
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
@@ -60,7 +60,7 @@ const MessageBubble = ({
             </div>
           </>
         )}
-      </motion.div>
+      </Motion.div>
 
       {isOut && (
         <div className="ml-2 mt-1">

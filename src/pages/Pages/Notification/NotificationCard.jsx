@@ -1,4 +1,4 @@
-import { motion} from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const NotificationCard = ({ color, label }) => {
   const colorClasses = {
@@ -9,14 +9,14 @@ const NotificationCard = ({ color, label }) => {
   };
 
   return (
-    <motion.div
+    <Motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.97 }}
       className={`${colorClasses[color]} text-white text-center px-6 py-6 rounded-md shadow cursor-pointer`}
     >
       <p className="font-semibold">{label}</p>
       <p className="text-xs opacity-90">Notification</p>
-    </motion.div>
+    </Motion.div>
   );
 };
 export default NotificationCard

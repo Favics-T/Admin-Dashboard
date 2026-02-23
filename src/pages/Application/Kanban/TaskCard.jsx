@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { tokens } from './data';
 import Tag from './Tag.jsx'
 import {
@@ -11,11 +11,9 @@ import {
   import IconStat from './IconStat';
   import AvatarGroup from './AvatarGroup';
 
-  const cn = (...classes) => classes.filter(Boolean).join(" ");
-
 function TaskCard({ task }) {
   return (
-    <motion.article
+    <Motion.article
       layout
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
@@ -62,7 +60,7 @@ function TaskCard({ task }) {
       <div className="mt-4">
         <AvatarGroup ids={task.members} />
       </div>
-    </motion.article>
+    </Motion.article>
   );
 }
 

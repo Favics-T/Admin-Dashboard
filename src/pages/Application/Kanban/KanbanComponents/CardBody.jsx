@@ -1,6 +1,3 @@
-import { div } from 'framer-motion/client'
-import React from 'react'
-
 const CardBody = ({children,type}) => {
     return(
         <div className='border shadow-md border-gray-200 rounded h-full'>

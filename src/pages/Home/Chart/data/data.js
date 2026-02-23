@@ -1,5 +1,3 @@
-import { data } from "react-router-dom";
-
 export const lineData = {
   labels: [0, 5, 15, 25, 35, 45, 55, 65, 85, 95, 105, 125],
   datasets: [

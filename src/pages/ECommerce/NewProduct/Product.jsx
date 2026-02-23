@@ -3,7 +3,7 @@ import ProductHeader from '../components/ProductHeader'
 import { EcommerceContext } from '../../../Context/EcommerceContext'
 
 const Product = () => {
-  const {step} = useContext(EcommerceContext);
+  useContext(EcommerceContext);
   return (
     <div className='flex justify-center items-center w-full '>
 

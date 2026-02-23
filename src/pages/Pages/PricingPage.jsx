@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const tiers = [
@@ -70,7 +70,7 @@ const FeatureItem = ({ text }) => (
 // Pricing Card
 const PricingCard = ({ tier }) => {
   return (
-    <motion.div
+    <Motion.div
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
       className="flex flex-col bg-white rounded-lg shadow-md border border-gray-100 p-6 w-full max-w-sm"
@@ -85,7 +85,7 @@ const PricingCard = ({ tier }) => {
           <FeatureItem key={idx} text={feature} />
         ))}
       </ul>
-    </motion.div>
+    </Motion.div>
   );
 };
 

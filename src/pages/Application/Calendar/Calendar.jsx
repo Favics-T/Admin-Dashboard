@@ -7,7 +7,7 @@ import { events } from "../../../data/events";
 export default function Calendar() {
    const [date] = useState(new Date(2022, 0, 1)); 
   const [year, month] = [date.getFullYear(), date.getMonth()];
-  const [selected, setSelected] = useState(null);
+  const [, setSelected] = useState(null);
 
 
   const sidebarEvents = events.slice(0, 8);
